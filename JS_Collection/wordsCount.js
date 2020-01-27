@@ -1,4 +1,7 @@
 
+// step 6 from 31
+// exercise MAP
+
 const stopWords = ['and', 'or', 'a', 'the', ''];
 const words = ['HellO', 'h', 'And', 'heLlo', '', 'AND', 'DOG', 'oR', 'cat', 'HELLO', 'caT'];
 wordsCount(words, stopWords); // [['hello', 3], ['h', 1], ['dog', 1], ['cat', 2]]
