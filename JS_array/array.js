@@ -4,8 +4,12 @@ const liveSimbols = '$#%!';
 const makeCensored = (inSentence, deadWords) => {
     let workArray = inSentence.split(' ');
     console.log(workArray);
-    for (let i = 0; i < workArray; i += 1) {
-
+    for (let i = 0; i < workArray.length; i += 1) {
+        for (let j = 0; j < deadWords.length; j += 1) {
+            if (workArray[i] === deadWords[j]) {
+                workArray[i] = liveSimbols;
+            }
+        }
     }
     return workArray.join(' ');
 }
