@@ -1,8 +1,10 @@
 
 import uniq from { lodash }
 
-const getSameCount = () => {
-
+const getSameCount = (arr1, arr2) => {
+    let resultArray = [];
+    let summaryArray = arr1.concat(arr2);
+    return uniq(summaryArray).length;
 }
 
 // getSameCount([], []); // 0
