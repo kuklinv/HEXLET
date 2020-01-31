@@ -1,15 +1,21 @@
 
-const countUniqChars = (text) => {
-    const inputArray = Array.from(text);
-    const filterArr = [... new Set(inputArray)]
-    console.log(filterArr.length);
-}
 
-// const text1 = 'yyab';
-// countUniqChars(text1); // 3
 
-const text2 = 'You know nothing Jon Snow';
-countUniqChars(text2); // 13
+
+
+//here is solution https://vike.io/ru/564304/ about uniq array filter
+
+// const countUniqChars = (text) => {
+//     const inputArray = Array.from(text);
+//     const filterArr = [... new Set(inputArray)]
+//     return filterArr.length;
+// }
+
+// // const text1 = 'yyab';
+// // countUniqChars(text1); // 3
+
+// const text2 = 'You know nothing Jon Snow';
+// countUniqChars(text2); // 13
 
   // const text3 = '';
   // countUniqChars(text3); // 0
