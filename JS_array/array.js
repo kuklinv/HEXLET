@@ -1,21 +1,23 @@
-const sentence = 'When you play the game of thrones, you win or you die';
-const liveSimbols = '$#%!';
 
-const makeCensored = (inSentence, deadWords) => {
-    let workArray = inSentence.split(' ');
-    console.log(workArray);
-    for (let i = 0; i < workArray.length; i += 1) {
-        for (let j = 0; j < deadWords.length; j += 1) {
-            if (workArray[i] === deadWords[j]) {
-                workArray[i] = liveSimbols;
-            }
-        }
-    }
-    return workArray.join(' ');
-}
 
-const result = makeCensored(sentence, ['die', 'play']);
-console.log(result);
+// const sentence = 'When you play the game of thrones, you win or you die';
+// const liveSimbols = '$#%!';
+
+// const makeCensored = (inSentence, deadWords) => {
+//     let workArray = inSentence.split(' ');
+//     console.log(workArray);
+//     for (let i = 0; i < workArray.length; i += 1) {
+//         for (let j = 0; j < deadWords.length; j += 1) {
+//             if (workArray[i] === deadWords[j]) {
+//                 workArray[i] = liveSimbols;
+//             }
+//         }
+//     }
+//     return workArray.join(' ');
+// }
+
+// const result = makeCensored(sentence, ['die', 'play']);
+// console.log(result);
 // When you $#%! the game of thrones, you win or you $#%!
 
 // const definitions = [
