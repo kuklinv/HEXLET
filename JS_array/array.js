@@ -1,8 +1,8 @@
 const isBracketStructureBalanced = str => {
   var chars = str.split(''),
     stack = [],
-    open = ['{', '(', '['],
-    close = ['}', ')', ']'],
+    open = ['{', '(', '[', '<'],
+    close = ['}', ')', ']', '>'],
     closeIndex,
     openIndex;
 
@@ -31,7 +31,7 @@ const isBracketStructureBalanced = str => {
 
 // isBracketStructureBalanced('{<>}}'); // false
 // isBracketStructureBalanced('({}}[]'); // false (<><<{[()]}>>>)
-console.log(isBracketStructureBalanced('({}}[]'));
+console.log(isBracketStructureBalanced('({}}[]')); //false
 console.log(isBracketStructureBalanced('<><<{[()]}>>>')); // false
 
 // return stack.length == 0;
