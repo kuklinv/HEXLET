@@ -1,27 +1,38 @@
+const isBracketStructureBalanced = str => {
+  var chars = str.split(''),
+    stack = [],
+    open = ['{', '(', '['],
+    close = ['}', ')', ']'],
+    closeIndex,
+    openIndex;
 
-const isBracketStructureBalanced = (text) => {
-  let i, l = text.length, char, last, stack = [];
-  for (i = 0; i < l; i++) {
-    char = text[i];
-    if (char == "{" || char == "(" || char == "[" || char == "<") {
-      stack.push(char);
-      last = char;
-    } else if (char == '}' || char == ")" || char == "]" || char == ">") {
-      if (last) {
-        if (char == '}' && last == "{" || char == ')' && last == '(' && char == ']' && last == '[' && char == '>' || char == '<') {
-          stack.pop();
-          last = stack.length > 0 ? stack[stack.length - 1] : undefined;
-        }
-      } else {
+  for (var i = 0, len = chars.length; i < len; i++) {
+    openIndex = open.indexOf(chars[i]);
+    if (openIndex !== -1) {
+      stack.push(openIndex);
+      continue;
+    }
+
+    closeIndex = close.indexOf(chars[i]);
+    if (closeIndex !== -1) {
+      openIndex = stack.pop();
+      if (closeIndex !== openIndex) {
         return false;
       }
     }
   }
-  return stack.length == 0;
+
+  if (stack.length !== 0) {
+    return false;
+  }
+
+  return true;
 }
 
 // isBracketStructureBalanced('{<>}}'); // false
-isBracketStructureBalanced('({}}[]'); // false
+// isBracketStructureBalanced('({}}[]'); // false (<><<{[()]}>>>)
+console.log(isBracketStructureBalanced('({}}[]'));
+console.log(isBracketStructureBalanced('<><<{[()]}>>>')); // false
 
 // return stack.length == 0;
 // let counter = 0;
