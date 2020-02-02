@@ -1,7 +1,71 @@
 
+const isBracketStructureBalanced = (text) => {
+  let i, l = text.length, char, last, stack = [];
+  for (i = 0; i < l; i++) {
+    char = text[i];
+    if (char == "{" || char == "(" || char == "[" || char == "<") {
+      stack.push(char);
+      last = char;
+    } else if (char == '}' || char == ")" || char == "]" || char == ">") {
+      if (last) {
+        if (char == '}' && last == "{" || char == ')' && last == '(' && char == ']' && last == '[' && char == '>' || char == '<') {
+          stack.pop();
+          last = stack.length > 0 ? stack[stack.length - 1] : undefined;
+        }
+      } else {
+        return false;
+      }
+    }
+  }
+  return stack.length == 0;
+}
+
+// isBracketStructureBalanced('{<>}}'); // false
+isBracketStructureBalanced('({}}[]'); // false
+
+// return stack.length == 0;
+// let counter = 0;
+// const brackets = '()[]{}<>';  // if odd - open, if even - close
+// if (string.length == 0) return true;
+// for (let i = 0; i < string.length; i += 1) {
+//   let currentIndex = brackets.indexOf(string[i]);
+//   if (currentIndex !== -1 && currentIndex % 2 == 0) {
+//     tempIndex = currentIndex;
+//     counter++;
+//     console.log(counter);
+//   } else if (currentIndex !== -1 && currentIndex % 2 !== 0) {
+//     if (currentIndex !== tempIndex + 1) {
+//       console.log(false);
+//     }
+//     counter--;
+//     console.log(counter);
+  // return counter === 0 ? true : false;
+  // counter == 0 ? console.log(true) : console.log(false);
+//   }
+
+  // if (string[i] == '(' && string[i] == '[' && string[i] == '{' && string[i] == '<') {
+  //   counter++;
+  // } else if (string[i] == ')' && string[i] == ']' && string[i] == '}' && string[i] == '>') {
+  //   counter--;
+  // }
 
 
+// const bubbleSort = (inputArr) => {
+//   let len = inputArr.length;
+//   for (let i = 0; i < len; i++) {
+//     for (let j = 0; j < len; j++) {
+//       if (inputArr[j] > inputArr[j + 1]) {
+//         let tmp = inputArr[j];
+//         inputArr[j] = inputArr[j + 1];
+//         inputArr[j + 1] = tmp;
+//       }
+//     }
+//   }
+//   return inputArr;
+// }
 
+// // bubbleSort([]); // []
+// bubbleSort([3, 10, 4, 3]); // [3, 3, 4, 10]
 
 //here is solution https://vike.io/ru/564304/ about uniq array filter
 
