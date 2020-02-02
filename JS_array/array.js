@@ -1,38 +1,51 @@
-const isBracketStructureBalanced = str => {
-  var chars = str.split(''),
-    stack = [],
-    open = ['{', '(', '[', '<'],
-    close = ['}', ')', ']', '>'],
-    closeIndex,
-    openIndex;
 
-  for (var i = 0, len = chars.length; i < len; i++) {
-    openIndex = open.indexOf(chars[i]);
-    if (openIndex !== -1) {
-      stack.push(openIndex);
-      continue;
-    }
 
-    closeIndex = close.indexOf(chars[i]);
-    if (closeIndex !== -1) {
-      openIndex = stack.pop();
-      if (closeIndex !== openIndex) {
-        return false;
-      }
-    }
-  }
+const getIntersectionOfSortedArrays = (arr1, arr2) => {
 
-  if (stack.length !== 0) {
-    return false;
-  }
-
-  return true;
 }
 
-// isBracketStructureBalanced('{<>}}'); // false
-// isBracketStructureBalanced('({}}[]'); // false (<><<{[()]}>>>)
-console.log(isBracketStructureBalanced('({}}[]')); //false
-console.log(isBracketStructureBalanced('<><<{[()]}>>>')); // false
+getIntersectionOfSortedArrays([10, 11, 24], [10, 13, 14, 18, 24, 30]); // [10, 24]
+
+getIntersectionOfSortedArrays([10, 11, 24], [-2, 3, 4]); // []
+
+getIntersectionOfSortedArrays([], [2]); // []
+
+
+// const isBracketStructureBalanced = str => {
+//   var chars = str.split(''),
+//     stack = [],
+//     open = ['{', '(', '[', '<'],
+//     close = ['}', ')', ']', '>'],
+//     closeIndex,
+//     openIndex;
+
+//   for (var i = 0, len = chars.length; i < len; i++) {
+//     openIndex = open.indexOf(chars[i]);
+//     if (openIndex !== -1) {
+//       stack.push(openIndex);
+//       continue;
+//     }
+
+//     closeIndex = close.indexOf(chars[i]);
+//     if (closeIndex !== -1) {
+//       openIndex = stack.pop();
+//       if (closeIndex !== openIndex) {
+//         return false;
+//       }
+//     }
+//   }
+
+//   if (stack.length !== 0) {
+//     return false;
+//   }
+
+//   return true;
+// }
+
+// // isBracketStructureBalanced('{<>}}'); // false
+// // isBracketStructureBalanced('({}}[]'); // false (<><<{[()]}>>>)
+// console.log(isBracketStructureBalanced('({}}[]')); //false
+// console.log(isBracketStructureBalanced('<><<{[()]}>>>')); // false
 
 // return stack.length == 0;
 // let counter = 0;
