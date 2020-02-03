@@ -1,14 +1,92 @@
 
 
-const getIntersectionOfSortedArrays = (arr1, arr2) => {
-
+const compareVersion = (a, b) => {
+  let v1Arr = a.split('.');
+  let v2Arr = b.split('.');
+  console.log(v1Arr);
+  console.log(v2Arr);
+  if (v1Arr[0] == v2Arr[0] && v1Arr[1] == v2Arr[1]) {   // TODO привести к числам!!!!!!!!
+    return 0;
+  } else if (v1Arr[0] > v2Arr[0] || v1Arr[0] == v2Arr[0] && v1Arr[1] > v2Arr[1]) {
+    return 1;
+  } else { return -1; }
 }
 
-getIntersectionOfSortedArrays([10, 11, 24], [10, 13, 14, 18, 24, 30]); // [10, 24]
+compareVersion("0.1", "0.2"); // -1
+compareVersion('0.2', '0.12'); // нужно привести строку из независимых чисел к числу и тогда уже сравнивать
+// const isContinuousSequence = array => {
+//   if (array.length <= 1) return false;
+//   let start = array[0];
+//   for (let i = 1; i < array.length; i += 1) {
+//     if (arr[i] - start !== 1) return false;
+//     start += 1;
+//   }
+//   return true;
+// }
 
-getIntersectionOfSortedArrays([10, 11, 24], [-2, 3, 4]); // []
+// const lengthOfLastWord = string => {
+//   if (string.length == 0) return 0;
+//   const stringArray = string.split(' ');
+//   let lastWord = stringArray.length - 1;
+//   while (stringArray[lastWord] == '') {
+//     lastWord--;
+//   }
+//   return stringArray[lastWord].length;
+// }
 
-getIntersectionOfSortedArrays([], [2]); // []
+// lengthOfLastWord('hello, wOrLD!  ');
+
+
+// const deleteSpaces = subString => {
+//   let filterSubString = '';
+//   for (let i = 0; i < subString.length; i += 1) {
+//     if (subString.charAt(i) !== ' ') {
+//       filterSubString += subString.charAt(i);
+//     }
+//   }
+//   return filterSubString.length;
+// }
+
+// const lengthOfLastWord = string => {
+//   if (string.length == 0) return 0;
+//   const stringArray = string.split(' ');
+//   console.log(stringArray);
+//   const arrayLength = stringArray.length;
+//   const lastWord = arrayLength - 1;
+//   if (stringArray.length > 1 && stringArray[lastWord].length == 0) {
+//     return deleteSpaces(stringArray[lastWord - 1]);
+//   } else return deleteSpaces(stringArray[lastWord]);
+// }
+
+// lengthOfLastWord('hello, wOrLD!  ');
+
+
+///////////////////////////////////////tests
+
+// const getIntersectionOfSortedArrays = (arr1, arr2) => {
+//   let indexArr1 = 0;
+//   let indexArr2 = 0;
+//   let resArray = [];
+//   do {
+//     if (arr1[indexArr1] == arr2[indexArr2]) {
+//       resArray.push(arr1[indexArr1]);
+//       indexArr1++;
+//       indexArr2++;
+//     } else if (arr1[indexArr1] > arr2[indexArr2]) {
+//       indexArr2++;
+//     } else {
+//       indexArr1++;
+//     }
+//   } while (indexArr1 < arr1.length && indexArr2 < arr2.length);
+
+//   console.log(resArray);
+// }
+
+// getIntersectionOfSortedArrays([10, 11, 24], [10, 13, 14, 18, 24, 30]); // [10, 24]
+
+// getIntersectionOfSortedArrays([10, 11, 24], [-2, 3, 4]); // []
+
+// getIntersectionOfSortedArrays([], [2]); // []
 
 
 // const isBracketStructureBalanced = str => {
