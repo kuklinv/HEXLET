@@ -1,3 +1,20 @@
+const chunk = (array, size) => {
+  let resultArray = [];
+  let tempChunk = [];
+  let j = 0;
+  for (let i = 0; i < array.length; i++) {
+    for (j = i; j <= size; j++) {
+      tempChunk.push(array[i]);
+    }
+    resultArray.push(tempChunk);
+    tempChunk = [];
+    i = j;
+  }
+  console.log(resultArray);
+}
+
+chunk(['a', 'b', 'c', 'd'], 2);
+
 
 
 // const compareVersion = (a, b) => {
