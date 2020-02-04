@@ -1,19 +1,19 @@
 
 
-const compareVersion = (a, b) => {
-  let v1Arr = a.split('.');
-  let v2Arr = b.split('.');
-  console.log(v1Arr);
-  console.log(v2Arr);
-  if (v1Arr[0] == v2Arr[0] && v1Arr[1] == v2Arr[1]) {   // TODO привести к числам!!!!!!!!
-    return 0;
-  } else if (v1Arr[0] > v2Arr[0] || v1Arr[0] == v2Arr[0] && v1Arr[1] > v2Arr[1]) {
-    return 1;
-  } else { return -1; }
-}
+// const compareVersion = (a, b) => {
+//   let c = a.split('.');
+//   let d = b.split('.');
+//   let v1Arr = c.map(v => parseInt(v, 10));
+//   let v2Arr = d.map(v => parseInt(v, 10));
+//   if (v1Arr[0] == v2Arr[0] && v1Arr[1] == v2Arr[1]) {
+//     return 0;
+//   } else if (v1Arr[0] > v2Arr[0] || v1Arr[0] == v2Arr[0] && v1Arr[1] > v2Arr[1]) {
+//     return 1;
+//   } else { return -1; }
+// }
 
-compareVersion("0.1", "0.2"); // -1
-compareVersion('0.2', '0.12'); // нужно привести строку из независимых чисел к числу и тогда уже сравнивать
+// compareVersion("0.1", "0.2"); // -1
+// compareVersion('0.2', '0.12'); // нужно привести строку из независимых чисел к числу и тогда уже сравнивать
 // const isContinuousSequence = array => {
 //   if (array.length <= 1) return false;
 //   let start = array[0];
