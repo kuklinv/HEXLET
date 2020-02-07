@@ -16,11 +16,13 @@ const data = {
 
 const getIn = (objectInn, findeKaysArray) => {
     let objectInnkeys = Object.keys(objectInn);
-    console.log(objectInnkeys);
-    for (const key in objectInnkeys) {
-        if (typeof (key) !== 'object') {
-
-            console.log(objectInnkeys[key]);
+    // console.log(objectInnkeys);
+    for (const key in objectInn) {
+        // console.log(objectInn[key]);
+        for (let i = 0; i <= findeKaysArray.length; i++) {
+            if (key === findeKaysArray[i]) {
+                console.log(objectInn[key]);
+            }
         }
     }
 }
