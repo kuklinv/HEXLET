@@ -1,4 +1,10 @@
 
+// TODO в принципе понятно
+// на первой итерации логирует обьект не погружаясь внутрь. нужно проверка не обьект ли это на входе и если  - обьект
+// то погружаемся внутрь, когда окказываеться что не обьект - проверяем совпадение ключей и возвращаем или его значение
+// или null
+//
+
 
 const data = {
     user: 'ubuntu',
@@ -18,19 +24,16 @@ const getIn = (objectInn, findeKaysArray) => {
     const recTestKeys = key => {
         for (let i = 0; i <= findeKaysArray.length; i++) {
             if (key.hasOwnProperty(findeKaysArray[i])) {
-                console.log(objectInn[findeKaysArray[i]]);
+                return objectInn[findeKaysArray[i]];
+                // console.log(objectInn[findeKaysArray[i]]);
             } else {
-                console.log('no such key');
+                return null;
+                // console.log('no such key');
             }
         }
-        // if (typeof (key) !== 'object') {
-        //     for (let i = 0; i <= findeKaysArray.length; i++) {
-        //         if (key === findeKaysArray[i]) {
-        //             console.log(objectInn[key]);
-        //         } else console.log('nothing');
-        //     }
-        // } else recTestKeys(key);
+        // return objectInn[findeKaysArray[i]];
     }
+    console.log(findeKaysArray.length);
     for (let n = 0; n < findeKaysArray.length; n++) {
         if (objectInn.hasOwnProperty(findeKaysArray[n])) {
             console.log(objectInn[findeKaysArray[n]]);
@@ -40,23 +43,7 @@ const getIn = (objectInn, findeKaysArray) => {
             }
         }
     }
-
-
-
-    // for (const key of Object.keys(objectInn)) {
-    //     recTestKeys(key);
-    // }
-    // console.log(objectInnkeys);
-    // for (const key in objectInn) {
-    //     // console.log(objectInn[key]);
-    //     recTestKeys(key);
-    // for (let i = 0; i <= findeKaysArray.length; i++) {
-    //     if (key === findeKaysArray[i]) {
-    //         console.log(objectInn[key]);
-    //     }
-    // }
 }
-
 
 // getIn(data, ['undefined']); // null
 // getIn(data, ['user']); // 'ubuntu'
