@@ -20,34 +20,58 @@ const data = {
     },
 };
 
+
+// идут только первые два теста
 const getIn = (objectInn, findKaysArray) => {
+    if (findKaysArray.length == 0 || findKaysArray[0] == null || findKaysArray[0] == 'undefined') return null;
     let objectInnKeys = Object.keys(objectInn);
-    objectInnKeys.forEach(function (item) {
-        if (typeof (item) == 'object') {
-            return getIn(item, findKaysArray);
+    for (let j = 0; j < objectInnKeys.length; j++) {
+        if (typeof (objectInnKeys[j]) == 'object') {
+            return getIn(k, findKaysArray);
+        } else if (j == findKaysArray.length - 1) {
+            return recTestKeys(objectInnKeys[j]);
         } else {
-            return recTestKeys(item);
+            return null;
         }
-    });
+    }
+
+    // цикл идет по каждому и не останавливаеться при найденном ключе в итоге приходит так или иначе в null
+    // выше переписываю пробуя другие методы перебора
+    // const getIn = (objectInn, findKaysArray) => {
+    //     if (findKaysArray.length == 0 || findKaysArray[0] == null || findKaysArray[0] == 'undefined') return null;
+    //     let objectInnKeys = Object.keys(objectInn);
+    //     objectInnKeys.forEach(function (item) {
+    //         if (typeof (item) == 'object') {
+    //             return getIn(item, findKaysArray);
+    //         } else {
+    //             return recTestKeys(item);
+    //         }
+    //     });
 
 
     function recTestKeys(key) {
         for (let i = 0; i < findKaysArray.length; i++) {
-            if (key.hasOwnProperty(findKaysArray[i])) {
-
-            }
+            // console.log(objectInn[key])
+            if (key == findKaysArray[i]) {
+                return objectInn[key];
+            } else return null;
         }
     }
 }
 
+console.log(getIn(data, ['undefined'])); //+
 // getIn(data, ['undefined']); // null
-// getIn(data, ['user']); // 'ubuntu'
+console.log(getIn(data, ['user'])); // 'ubuntu' //+
 // getIn(data, ['user', 'ubuntu']); // null
-getIn(data, ['hosts', 1, 'name']); // 'web2'
-  // getIn(data, ['hosts', 0]); // { name: 'web1' }
-  // getIn(data, ['hosts', 1, null]); // 3
-  // getIn(data, ['hosts', 1, 'active']); // false
-
+console.log(getIn(data, ['user', 'ubuntu'])); //+
+// getIn(data, ['hosts', 1, 'name']); // 'web2'
+console.log(getIn(data, ['hosts', 1, 'name']));
+// getIn(data, ['hosts', 0]); // { name: 'web1' }
+console.log(getIn(data, ['hosts', 0]));
+// getIn(data, ['hosts', 1, null]); // 3
+console.log(getIn(data, ['hosts', 1, null]));
+// getIn(data, ['hosts', 1, 'active']); // false
+console.log(getIn(data, ['hosts', 1, 'active']));
 // const getIn = (objectInn, findeKaysArray) => {
 //     const recTestKeys = key => {
 //         for (let i = 0; i <= findeKaysArray.length; i++) {
