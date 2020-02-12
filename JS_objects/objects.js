@@ -20,33 +20,27 @@ const data = {
     },
 };
 
+//// следующая итерация - перестройка алгоритма.
+// проверяем совпадение ключей
+// если есть то проверяем обьект ли этот ключ, если  - да  - идем внутрь, если нет, то возвращаем значение ключа
+//
+//
+//разбираем 4-й тест!!!!!!!!!!!!!!!!!!!!!!!
 
-// идут только первые два теста
 const getIn = (objectInn, findKaysArray) => {
     if (findKaysArray.length == 0 || findKaysArray[0] == null || findKaysArray[0] == 'undefined') return null;
     let objectInnKeys = Object.keys(objectInn);
     for (let j = 0; j < objectInnKeys.length; j++) {
-        if (typeof (objectInnKeys[j]) == 'object') {
-            return getIn(k, findKaysArray);
-        } else if (j == findKaysArray.length - 1) {
-            return recTestKeys(objectInnKeys[j]);
-        } else {
-            return null;
-        }
+        if (recTestKeys(objectInnKeys[j]) !== null) {
+            if (typeof (recTestKeys(objectInnKeys[j])) == 'object') {
+                return getIn(recTestKeys(objectInnKeys[j]), findKaysArray);
+            } else if (j == findKaysArray.length - 1) {
+                return recTestKeys(objectInnKeys[j]);
+            } else {
+                return null;
+            }
+        } //else return objectInn[objectInnKeys[j]];
     }
-
-    // цикл идет по каждому и не останавливаеться при найденном ключе в итоге приходит так или иначе в null
-    // выше переписываю пробуя другие методы перебора
-    // const getIn = (objectInn, findKaysArray) => {
-    //     if (findKaysArray.length == 0 || findKaysArray[0] == null || findKaysArray[0] == 'undefined') return null;
-    //     let objectInnKeys = Object.keys(objectInn);
-    //     objectInnKeys.forEach(function (item) {
-    //         if (typeof (item) == 'object') {
-    //             return getIn(item, findKaysArray);
-    //         } else {
-    //             return recTestKeys(item);
-    //         }
-    //     });
 
 
     function recTestKeys(key) {
@@ -72,6 +66,35 @@ console.log(getIn(data, ['hosts', 0]));
 console.log(getIn(data, ['hosts', 1, null]));
 // getIn(data, ['hosts', 1, 'active']); // false
 console.log(getIn(data, ['hosts', 1, 'active']));
+
+
+    // идут только первые два теста
+    // const getIn = (objectInn, findKaysArray) => {
+    //     if (findKaysArray.length == 0 || findKaysArray[0] == null || findKaysArray[0] == 'undefined') return null;
+    //     let objectInnKeys = Object.keys(objectInn);
+    //     for (let j = 0; j < objectInnKeys.length; j++) {
+    //         if (typeof (objectInnKeys[j]) == 'object') {
+    //             return getIn(k, findKaysArray);
+    //         } else if (j == findKaysArray.length - 1) {
+    //             return recTestKeys(objectInnKeys[j]);
+    //         } else {
+    //             return null;
+    //         }
+    //     }
+
+    // цикл идет по каждому и не останавливаеться при найденном ключе в итоге приходит так или иначе в null
+    // выше переписываю пробуя другие методы перебора
+    // const getIn = (objectInn, findKaysArray) => {
+    //     if (findKaysArray.length == 0 || findKaysArray[0] == null || findKaysArray[0] == 'undefined') return null;
+    //     let objectInnKeys = Object.keys(objectInn);
+    //     objectInnKeys.forEach(function (item) {
+    //         if (typeof (item) == 'object') {
+    //             return getIn(item, findKaysArray);
+    //         } else {
+    //             return recTestKeys(item);
+    //         }
+    //     });
+
 // const getIn = (objectInn, findeKaysArray) => {
 //     const recTestKeys = key => {
 //         for (let i = 0; i <= findeKaysArray.length; i++) {
