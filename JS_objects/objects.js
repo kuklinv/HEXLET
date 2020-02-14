@@ -1,11 +1,4 @@
 
-// TODO в принципе понятно
-// на первой итерации логирует обьект не погружаясь внутрь. нужно проверка не обьект ли это на входе и если  - обьект
-// то погружаемся внутрь, когда окказываеться что не обьект - проверяем совпадение ключей и возвращаем или его значение
-// или null
-//
-
-
 const data = {
     user: 'ubuntu',
     hosts: {
@@ -31,15 +24,16 @@ const getIn = (objectInn, findKaysArray) => {
     if (findKaysArray.length == 0 || findKaysArray[0] == null || findKaysArray[0] == 'undefined') return null;
     let objectInnKeys = Object.keys(objectInn);
     for (let j = 0; j < objectInnKeys.length; j++) {
-        if (recTestKeys(objectInnKeys[j]) !== null) {
-            if (typeof (recTestKeys(objectInnKeys[j])) == 'object') {
-                return getIn(recTestKeys(objectInnKeys[j]), findKaysArray);
+        let findKey = recTestKeys(objectInnKeys[j]);  // TODO: add variable for recTestKeys(objectInnKeys[j])
+        if (findKey !== null) {
+            if (typeof (findKey) == 'object') {
+                return getIn(findKey, findKaysArray);
             } else if (j == findKaysArray.length - 1) {
-                return recTestKeys(objectInnKeys[j]);
+                return findKey;
             } else {
                 return null;
             }
-        } //else return objectInn[objectInnKeys[j]];
+        } return findKey;   // TODO: its right?
     }
 
 
@@ -48,8 +42,9 @@ const getIn = (objectInn, findKaysArray) => {
             // console.log(objectInn[key])
             if (key == findKaysArray[i]) {
                 return objectInn[key];
-            } else return null;
+            }
         }
+        return null; // TODO: its right?
     }
 }
 
