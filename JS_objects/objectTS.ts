@@ -12,7 +12,7 @@ const data = {
     },
 };
 
-const getIn = (objectInn: object, findKaysArray: Array<any>) => {
+const getIn = (objectInn: object, findKaysArray: string[]): any => {
     if (findKaysArray.length == 0 || findKaysArray[0] == null || findKaysArray[0] == 'undefined') return null;
     let objectInnKeys: Array<any> = Object.keys(objectInn);
     for (let j = 0; j < objectInnKeys.length; j++) {
