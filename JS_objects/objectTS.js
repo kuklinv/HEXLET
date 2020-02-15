@@ -28,8 +28,7 @@ const getIn = (objectInn, findKaysArray) => {
             else {
                 return null;
             }
-        }
-        return findKey; // TODO: its right?
+        } // TODO: return findKey; its right? need return?
     }
     function recTestKeys(key) {
         for (let i = 0; i < findKaysArray.length; i++) {
@@ -52,5 +51,5 @@ console.log(getIn(data, ['hosts', 1, 'name']));
 console.log(getIn(data, ['hosts', 0]));
 // getIn(data, ['hosts', 1, null]); // 3
 console.log(getIn(data, ['hosts', 1, null]));
-// getIn(data, ['hosts', 1, 'active']); // false
-console.log(getIn(data, ['hosts', 1, 'active']));
+// getIn(data, ['hosts', 1, 'active']); // false //
+console.log(getIn(data, ['hosts', 1, 'active'])); // + неожиданное прошел этот тест
