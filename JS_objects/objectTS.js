@@ -1,22 +1,23 @@
-var data = {
+"use strict";
+const data = {
     user: 'ubuntu',
     hosts: {
         0: {
-            name: 'web1'
+            name: 'web1',
         },
         1: {
             name: 'web2',
-            "null": 3,
-            active: false
-        }
-    }
+            null: 3,
+            active: false,
+        },
+    },
 };
-var getIn = function (objectInn, findKaysArray) {
+const getIn = (objectInn, findKaysArray) => {
     if (findKaysArray.length == 0 || findKaysArray[0] == null || findKaysArray[0] == 'undefined')
         return null;
-    var objectInnKeys = Object.keys(objectInn);
-    for (var j = 0; j < objectInnKeys.length; j++) {
-        var findKey = recTestKeys(objectInnKeys[j]); // TODO: add variable for recTestKeys(objectInnKeys[j])
+    let objectInnKeys = Object.keys(objectInn);
+    for (let j = 0; j < objectInnKeys.length; j++) {
+        let findKey = recTestKeys(objectInnKeys[j]);
         if (findKey !== null) {
             if (typeof (findKey) == 'object') {
                 return getIn(findKey, findKaysArray);
@@ -31,7 +32,7 @@ var getIn = function (objectInn, findKaysArray) {
         return findKey; // TODO: its right?
     }
     function recTestKeys(key) {
-        for (var i = 0; i < findKaysArray.length; i++) {
+        for (let i = 0; i < findKaysArray.length; i++) {
             // console.log(objectInn[key])
             if (key == findKaysArray[i]) {
                 return objectInn[key];

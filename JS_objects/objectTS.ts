@@ -16,7 +16,7 @@ const getIn = (objectInn: object, findKaysArray: string[]): any => {
     if (findKaysArray.length == 0 || findKaysArray[0] == null || findKaysArray[0] == 'undefined') return null;
     let objectInnKeys: Array<any> = Object.keys(objectInn);
     for (let j = 0; j < objectInnKeys.length; j++) {
-        let findKey = recTestKeys(objectInnKeys[j]);  // TODO: add variable for recTestKeys(objectInnKeys[j])
+        let findKey = recTestKeys(objectInnKeys[j]);
         if (findKey !== null) {
             if (typeof (findKey) == 'object') {
                 return getIn(findKey, findKaysArray);
