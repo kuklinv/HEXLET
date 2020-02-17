@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/kuklinv/HEXLET#readme",
   "dependencies": {
-    "lodash": "^4.17.15"
+    "eslint": "^6.8.0",
+    "lodash": "^4.17.15",
+    "tslint": "^6.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.5"
   }
 }
