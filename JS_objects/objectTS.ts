@@ -31,10 +31,10 @@ const getIn = (objectInn: object, findKaysArray: any[]): any => {
   const kaysArrLen = findKaysArrayToString.length;
   function recTestKeys(obj: object, keys: any[]) {
     let i: number = 0;
-    if (i == kaysArrLen) return obj[keys["i"]];
-    if (obj.hasOwnProperty(keys["i"])) {
-      return recTestKeys(obj[keys["i"]], keys[i + 1]);
-    }
+    if (obj.hasOwnProperty(keys[i]) && i == kaysArrLen - 1) return obj[keys[i]];
+    else if (obj.hasOwnProperty(keys[i])) {
+      return recTestKeys(obj[keys[i]], keys[i + 1]);
+    } else return null;
   }
   return recTestKeys(objectInn, findKaysArrayToString);
 };
