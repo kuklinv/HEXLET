@@ -5,35 +5,40 @@
 // lodash _.has(object, path)
 // lets first check obj.hasOwnProperty
 var data = {
-  user: "ubuntu",
-  hosts: {
-    0: {
-      name: "web1"
-    },
-    1: {
-      name: "web2",
-      null: 3,
-      active: false
+    user: "ubuntu",
+    hosts: {
+        0: {
+            name: "web1"
+        },
+        1: {
+            name: "web2",
+            "null": 3,
+            active: false
+        }
     }
-  }
 };
-var getIn = function(objectInn, findKaysArray) {
-  if (
-    findKaysArray.length == 0 ||
-    findKaysArray[0] == null ||
-    findKaysArray[0] == "undefined"
-  )
-    return null;
-  var findKaysArrayToString = findKaysArray.toString().split(","); // any input types => string
-  var kaysArrLen = findKaysArrayToString.length;
-  function recTestKeys(obj, keys) {
-    var i = 0; // NOT change!!!
-    if (obj.hasOwnProperty(keys[i]) && i == kaysArrLen - 1) return obj[keys[i]];
-    else if (obj.hasOwnProperty(keys[i])) {
-      return recTestKeys(obj[keys[i]], keys[i + 1]);
-    } else return null;
-  }
-  return recTestKeys(objectInn, findKaysArrayToString); // need 3-d param?
+var getIn = function (objectInn, findKaysArray) {
+    if (findKaysArray.length == 0 ||
+        findKaysArray[0] == null ||
+        findKaysArray[0] == "undefined")
+        return null;
+    var findKaysArrayToString = findKaysArray.toString().split(","); // any input types => string
+    var kaysArrLen = findKaysArrayToString.length;
+    // TODO: may be try this? (look at comments)
+    //let i = 0;
+    // function recTestKeys(obj: object, keys: any[], index) {
+    function recTestKeys(obj, keys) {
+        var i = 0;
+        if (obj.hasOwnProperty(keys[i]) && i == kaysArrLen - 1)
+            return obj[keys[i]];
+        else if (obj.hasOwnProperty(keys[i])) {
+            return recTestKeys(obj[keys[i]], keys[i + 1]);
+        }
+        else
+            return null;
+    }
+    // return recTestKeys(objectInn, findKaysArrayToString, i);
+    return recTestKeys(objectInn, findKaysArrayToString);
 };
 console.log(getIn(data, ["undefined"])); // null //+
 console.log(getIn(data, ["user"])); // 'ubuntu' //+

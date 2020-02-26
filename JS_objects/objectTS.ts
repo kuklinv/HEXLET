@@ -29,6 +29,9 @@ const getIn = (objectInn: object, findKaysArray: any[]): any => {
     return null;
   const findKaysArrayToString: string[] = findKaysArray.toString().split(","); // any input types => string
   const kaysArrLen = findKaysArrayToString.length;
+  // TODO: may be try this? (look at comments)
+  //let i = 0;
+  // function recTestKeys(obj: object, keys: any[], index) {
   function recTestKeys(obj: object, keys: any[]) {
     let i: number = 0;
     if (obj.hasOwnProperty(keys[i]) && i == kaysArrLen - 1) return obj[keys[i]];
@@ -36,6 +39,7 @@ const getIn = (objectInn: object, findKaysArray: any[]): any => {
       return recTestKeys(obj[keys[i]], keys[i + 1]);
     } else return null;
   }
+  // return recTestKeys(objectInn, findKaysArrayToString, i);
   return recTestKeys(objectInn, findKaysArrayToString);
 };
 
