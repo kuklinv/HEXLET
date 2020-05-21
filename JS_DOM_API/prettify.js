@@ -1,14 +1,14 @@
 // my work
-let doc = document.body;
-function prettify(doc) {
+function prettify(document) {
   let targetDiv = document.querySelectorAll("div");
   for (let divEl of targetDiv) {
     if (divEl.textContent) {
       let p = document.createElement("p");
       let text = divEl.textContent.trim();
       p.innerHTML = text;
-      //   divEl.replaceWith(p);
-      divEl.replaceChild(p, divEl.childNodes[0]);
+      // divEl.remove(divEl.children);
+      divEl.replaceWith(p); //TODO: not remove pre node
+      document.body.append(divEl);
     }
 
     // targetDiv[i].replaceChild(p, targetDiv[i].childNodes[0]);
@@ -17,6 +17,28 @@ function prettify(doc) {
   }
   return document.body.innerHTML;
 }
+
+export default prettify;
+
+// function prettify(document) {
+//   let targetDiv = document.querySelectorAll("div");
+//   for (let divEl of targetDiv) {
+//     if (divEl.textContent) {
+//       let p = document.createElement("p");
+//       let text = divEl.textContent.trim();
+//       p.innerHTML = text;
+//       divEl.replaceWith(p);
+//       document.body.remove(divEl);
+//       document.body.append(divEl);
+//     //   divEl.replaceChild(p, divEl.children);
+//     }
+
+//     // targetDiv[i].replaceChild(p, targetDiv[i].childNodes[0]);
+//     // targetDiv[i].childNodes[0].replaceWith(p);
+//     // doc.appendChild()
+//   }
+//   return document.body.innerHTML;
+// }
 
 // let doc = document.body;
 // function prettify(doc) {
