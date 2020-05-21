@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tests 1- 6 for prettify</title>
+  </head>
+  <body>
+    <!-- test1 -->
+    <p>Text</p>
+    <!-- expected = '<p>Text</p>' -->
+
+    <!-- test2 -->
+    <div>Text</div>
+    <!-- expected = '<div><p>Text</p></div>' -->
+
+    <!-- test3 -->
+    Text
+    <div>
+      <div>Text</div>
+      <p>Op</p>
+    </div>
+    <div>My</div>
+    <!-- expected = 'Text<div><div><p>Text</p></div><p>Op</p></div><div><p>My</p></div>' -->
+
+    <!-- test4 -->
+    Text
+    <div>
+      <div>Text</div>
+      <p>Op</p>
+    </div>
+    <div>My</div>
+    <!-- expected = `Text
+  <div>
+    <div><p>Text</p></div>
+    <p>Op</p>
+  </div>
+  <div><p>My</p></div>`; -->
+
+    <!-- test5 -->
+    Text
+    <div>
+      <div>
+        complex
+        <div>test</div>
+      </div>
+      <div>Text</div>
+      <p>Op</p>
+    </div>
+    <div>My</div>
+    <!-- expected = `Text
+  <div>
+    <div><p>complex</p><div><p>test</p></div></div>
+    <div><p>Text</p></div>
+    <p>Op</p>
+  </div>
+  <div><p>My</p></div>`;-->
+
+    <!-- test6 -->
+    <div>
+      text1
+      <p>something</p>
+      text2
+    </div>
+    <!-- expected= '<div><p>text1</p><p>something</p><p>text2</p></div>'-->
+
+    <script src="prettify.js"></script>
+  </body>
+</html>
