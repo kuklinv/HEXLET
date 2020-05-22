@@ -25,7 +25,7 @@ function prettify(doc) {
 //       let text = divEl.textContent.trim();
 //       p.innerHTML = text;
 //       // divEl.remove(divEl.children);
-//       divEl.replaceWith(p); //TODO: not remove pre node
+//       divEl.replaceWith(p);
 //       document.body.append(divEl);
 //     }
 
