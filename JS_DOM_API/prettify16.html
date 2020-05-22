@@ -4,15 +4,17 @@
     <title>Tests 1- 6 for prettify</title>
   </head>
   <body>
-    <!-- test1 -->
+    <!-- test1 PASSED-->
     <p>Text</p>
     <!-- expected = '<p>Text</p>' -->
 
-    <!-- test2 -->
+    <!-- test2 FAILED-->
     <div>Text</div>
-    <!-- expected = '<div><p>Text</p></div>' -->
+    <!-- expected = '<div><p>Text</p></div>'
+    FAILED  = "<div>Text</div>"
+    -->
 
-    <!-- test3 -->
+    <!-- test3 PASSED-->
     Text
     <div>
       <div>Text</div>
@@ -21,7 +23,7 @@
     <div>My</div>
     <!-- expected = 'Text<div><div><p>Text</p></div><p>Op</p></div><div><p>My</p></div>' -->
 
-    <!-- test4 -->
+    <!-- test4 PASSED-->
     Text
     <div>
       <div>Text</div>
@@ -35,7 +37,7 @@
   </div>
   <div><p>My</p></div>`; -->
 
-    <!-- test5 -->
+    <!-- test5 FAILED-->
     Text
     <div>
       <div>
@@ -52,15 +54,19 @@
     <div><p>Text</p></div>
     <p>Op</p>
   </div>
-  <div><p>My</p></div>`;-->
+  <div><p>My</p></div>`
+  FAILED = <div><p>complextest</p><div><p>test</p></div></div>
+  ;-->
 
-    <!-- test6 -->
+    <!-- test6 FAILED-->
     <div>
       text1
       <p>something</p>
       text2
     </div>
-    <!-- expected= '<div><p>text1</p><p>something</p><p>text2</p></div>'-->
+    <!-- expected= '<div><p>text1</p><p>something</p><p>text2</p></div>'
+    FAILED = "<div>text1<p>something</p>text2</div>"
+    -->
 
     <script src="prettify.js"></script>
   </body>
