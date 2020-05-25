@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Definitions from "./Definitions.jsx";
+// import definitions from "./definitions.js";
 
 const definitions = [
   { dt: "one", dd: "two" },
