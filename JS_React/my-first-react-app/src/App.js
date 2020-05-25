@@ -1,7 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 import Definitions from "./Definitions.jsx";
+
+const definitions = [
+  { dt: "one", dd: "two" },
+  { dt: "another term", dd: "another description" },
+];
 
 function App() {
   return (
@@ -19,7 +24,7 @@ function App() {
         >
           Learn React
         </a>
-        <Definitions />
+        <Definitions data={definitions} />
       </header>
     </div>
   );
