@@ -1,3 +1,12 @@
+import { make, set, get } from './map.js';
+const map = make();
+let result = get(map, 'key');
+console.log(result); // => null
+result = get(map, 'key', 'default_value');
+console.log(result); // => "default_value"
+set(map, 'key2', 'value2');
+result = get(map, 'key2');
+console.log(result); // => "value2"
 // const users = [
 //   { name: 'Bronn', gender: 'male', birthday: '1973-03-23' },
 //   { name: 'Reigar', gender: 'male', birthday: '1973-11-03' },
