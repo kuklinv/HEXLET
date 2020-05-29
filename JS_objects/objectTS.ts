@@ -1,17 +1,48 @@
+const data = {
+    user: 'ubuntu',
+    hosts: {
+        0: {
+            name: 'web1',
+        },
+        1: {
+            name: 'web2',
+            null: 3,
+            active: false,
+        },
+    },
+};
 
-import { make, set, get } from './map.js';
+const  getIn = (data, [...searchKeys]) => {
 
-const map = make();
-let result = get(map, 'key');
-console.log(result); // => null
+}
 
-result = get(map, 'key', 'default_value');
-console.log(result); // => "default_value"
+// export default getIn;
 
-set(map, 'key2', 'value2');
-result = get(map, 'key2');
-console.log(result); // => "value2"
+getIn(data, ['undefined']); // null
+getIn(data, ['user']); // 'ubuntu'
+getIn(data, ['user', 'ubuntu']); // null
+getIn(data, ['hosts', 1, 'name']); // 'web2'
+getIn(data, ['hosts', 0]); // { name: 'web1' }
+getIn(data, ['hosts', 1, null]); // 3
+getIn(data, ['hosts', 1, 'active']); // false
 
+
+
+
+
+// import { make, set, get } from './map.js';
+//
+// const map = make();
+// let result = get(map, 'key');
+// console.log(result); // => null
+//
+// result = get(map, 'key', 'default_value');
+// console.log(result); // => "default_value"
+//
+// set(map, 'key2', 'value2');
+// result = get(map, 'key2');
+// console.log(result); // => "value2"
+//
 
 
 // const users = [
