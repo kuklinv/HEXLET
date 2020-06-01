@@ -1,12 +1,132 @@
-import { make, set, get } from './map.js';
-const map = make();
-let result = get(map, 'key');
-console.log(result); // => null
-result = get(map, 'key', 'default_value');
-console.log(result); // => "default_value"
-set(map, 'key2', 'value2');
-result = get(map, 'key2');
-console.log(result); // => "value2"
+// hash
+//example:
+// import { make, set, get } from './map.js';
+// const map = make();
+// let result = get(map, 'key');
+// console.log(result); // => null
+// result = get(map, 'key', 'default_value');
+// console.log(result); // => "default_value"
+// set(map, 'key2', 'value2');
+// result = get(map, 'key2');
+// console.log(result); // => "value2"
+/*
+Для внутреннего представления словаря, используйте массив, где индекс содержит хеш записи, а значение — key и value (их можно упаковать в массив).
+*/
+function make() {
+    var newMap = [[index], [key, value]];
+    return newMap;
+}
+// try last version
+var data = {
+    user: "ubuntu",
+    hosts: {
+        0: {
+            name: "web1"
+        },
+        1: {
+            name: "web2",
+            "null": 3,
+            active: false
+        }
+    }
+};
+var getIn = function (objectInn, findKaysArray) {
+    if (findKaysArray.length == 0 ||
+        findKaysArray[0] == null ||
+        findKaysArray[0] == "undefined")
+        return null;
+    var i = 0;
+    return recTestKeys(objectInn, findKaysArray[i], index);
+    function recTestKeys(obj, key, index) {
+        if (obj.hasOwnProperty(key)) {
+            var objInner = key;
+            return recTestKeys(objectInn);
+        }
+        else
+            return null;
+    }
+};
+console.log(getIn(data, ["undefined"])); // null //+
+console.log(getIn(data, ["user"])); // 'ubuntu' //+
+console.log(getIn(data, ["user", "ubuntu"])); // null
+console.log(getIn(data, ["hosts", 1, "name"])); // 'web2'
+console.log(getIn(data, ["hosts", 0])); // { name: 'web1' }
+console.log(getIn(data, ["hosts", 1, null])); // 3
+console.log(getIn(data, ["hosts", 1, "active"])); // false
+//////////////////// ok its only 1-2 tests ***********************************
+// let data = {
+//   user: "ubuntu",
+//   hosts: {
+//     0: {
+//       name: "web1"
+//     },
+//     1: {
+//       name: "web2",
+//       null: 3,
+//       active: false
+//     }
+//   }
+// };
+// const getIn = function(objectInn, findKaysArray) {
+//   if (
+//     findKaysArray.length == 0 ||
+//     findKaysArray[0] == null ||
+//     findKaysArray[0] == "undefined"
+//   ) return null;
+//     function recTestKeys(obj, key, i) {
+//         if (obj.hasOwnProperty(key[i]) && typeof(key[i]) == 'object') {
+//             return recTestKeys(obj[key[i]], key[i], i+1);
+//         }
+//         else
+//             return obj[key];
+//     }
+//     let i = 0;
+//     return recTestKeys(objectInn, findKaysArray[i], i);
+// }
+// console.log(getIn(data, ["undefined"])); // null //+
+// console.log(getIn(data, ["user"])); // 'ubuntu' //+
+// console.log(getIn(data, ["user", "ubuntu"])); // null
+// console.log(getIn(data, ["hosts", 1, "name"])); // 'web2'
+// console.log(getIn(data, ["hosts", 0])); // { name: 'web1' }
+// console.log(getIn(data, ["hosts", 1, null])); // 3
+// console.log(getIn(data, ["hosts", 1, "active"])); // false
+//********************************************************* */
+// const data = {
+//     user: 'ubuntu',
+//     hosts: {
+//         0: {
+//             name: 'web1',
+//         },
+//         1: {
+//             name: 'web2',
+//             null: 3,
+//             active: false,
+//         },
+//     },
+// };
+// const  getIn = (data, [...searchKeys]) => {
+// }
+// // export default getIn;
+// getIn(data, ['undefined']); // null
+// getIn(data, ['user']); // 'ubuntu'
+// getIn(data, ['user', 'ubuntu']); // null
+// getIn(data, ['hosts', 1, 'name']); // 'web2'
+// getIn(data, ['hosts', 0]); // { name: 'web1' }
+// getIn(data, ['hosts', 1, null]); // 3
+// getIn(data, ['hosts', 1, 'active']); // false
+// import { make, set, get } from './map.js';
+//
+// const map = make();
+// let result = get(map, 'key');
+// console.log(result); // => null
+//
+// result = get(map, 'key', 'default_value');
+// console.log(result); // => "default_value"
+//
+// set(map, 'key2', 'value2');
+// result = get(map, 'key2');
+// console.log(result); // => "value2"
+//
 // const users = [
 //   { name: 'Bronn', gender: 'male', birthday: '1973-03-23' },
 //   { name: 'Reigar', gender: 'male', birthday: '1973-11-03' },
