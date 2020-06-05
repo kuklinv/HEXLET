@@ -12,10 +12,33 @@
 /*
 Для внутреннего представления словаря, используйте массив, где индекс содержит хеш записи, а значение — key и value (их можно упаковать в массив).
 */
-// function make(){
-//   const newMap = [[index],[key, value]];
-//   return newMap;
-// }
+function make() {
+    var internal = [];
+    return [internal];
+    // const newMap = [[index],[key, value]];
+    // return newMap;
+}
+function get(map, key, defaultValue) {
+    if (defaultValue === void 0) { defaultValue = null; }
+    var hash = crc32.str('key');
+    var index = Math.abs(hash) % 1000;
+    if (map[index]) {
+        return map[index];
+    }
+    else
+        return defaultValue; /// add collision
+}
+function set(map, key, value) {
+    var internal = [];
+    var hash = crc32.str('key');
+    var index = Math.abs(hash) % 1000;
+    if (!internal[index]) {
+        internal[index] = ['key', 'value'];
+        return true;
+    }
+    else
+        ;
+}
 ////8888888888888888888888888888888************* teacher
 // // BEGIN
 // const getIn = (data, keys) => {
@@ -146,7 +169,7 @@
 // var findKaysArrayToString = findKaysArray.toString().split(","); // any input types => string
 // console.log(findKaysArray);
 // var kaysArrLen = findKaysArrayToString.length;
-// TODO: may be try this? (look at comments)
+//
 //let i = 0;
 // function recTestKeys(obj: object, keys: any[], index) {
 // function recTestKeys(obj, keys) {
@@ -277,7 +300,7 @@
 //             else {
 //                 return null;
 //             }
-//         } // TODO: return findKey; its right? need return?
+//         } // T
 //     }
 //     function recTestKeys(key) {
 //         for (var i = 0; i < findKaysArray.length; i++) {
@@ -286,7 +309,7 @@
 //                 return objectInn[key];
 //             }
 //         }
-//         return null; // TODO: its right?
+//         return null; //
 //     }
 // };
 // console.log(getIn(data, ["undefined"])); // null //+
