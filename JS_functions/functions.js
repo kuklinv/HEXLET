@@ -3,6 +3,17 @@
 
 
 
+
+// const takeLast = (string, numberChar) => {
+//     if (string.length === 0 || numberChar > string.length) return null;
+//     let vocabulary = string.length - numberChar;
+//     let workingString = string.slice(vocabulary)
+//     return workingString.split("").reverse().join("");
+// }
+
+// console.log(takeLast('hexlet', 4)); // telx
+
+
 // const uniq = require('lodash');
 // import { uniq } from 'lodash';
 
