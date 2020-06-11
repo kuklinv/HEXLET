@@ -1,20 +1,76 @@
+// const _ = require('lodash');
+import { _ } from '../node_modules/lodash'
 
-const users = [
-    { name: 'Bronn', gender: 'male', birthday: '1973-03-23' },
-    { name: 'Reigar', gender: 'male', birthday: '1973-11-03' },
-    { name: 'Eiegon', gender: 'male', birthday: '1963-11-03' },
-    { name: 'Sansa', gender: 'female', birthday: '2012-11-03' },
-    { name: 'Jon', gender: 'male', birthday: '1980-11-03' },
-    { name: 'Robb', gender: 'male', birthday: '1980-05-14' },
-    { name: 'Tisha', gender: 'female', birthday: '2012-11-03' },
-    { name: 'Rick', gender: 'male', birthday: '2012-11-03' },
-    { name: 'Joffrey', gender: 'male', birthday: '1999-11-03' },
-    { name: 'Edd', gender: 'male', birthday: '1973-11-03' },
+const freeEmailDomains = [
+    'gmail.com',
+    'yandex.ru',
+    'hotmail.com',
 ];
 
-const getMenCountByYear = (data) => {
+const emails = [
+    'info@gmail.com',
+    'info@yandex.ru',
+    'info@hotmail.com',
+    'mk@host.com',
+    'support@hexlet.io',
+    'key@yandex.ru',
+    'sergey@gmail.com',
+    'vovan@gmail.com',
+    'vovan@hotmail.com',
+];
 
+
+const getFreeDomainsCount = (data) => {
+    let clearDomainsArr = data.map((el)=>{
+        return el.slice(el.indexOf('@')+1);
+    });
+
+    console.log(clearDomainsArr);
+
+    let filteredDomainFree = clearDomainsArr.filter((item)=> {
+        let res = [];
+        if(freeEmailDomains.includes(item)){
+            res.push(item);
+        }
+        return res;
+    });
+    console.log(filteredDomainFree);
+
+    return filteredDomainFree.reduce((acc, domain)=>{
+        if(!_.has(acc, domain)){
+            acc[domain]  = 1;
+        } else {
+            acc[domain] = acc[domain] + 1;
+        }
+        return acc;
+    }, {})
 }
+
+
+getFreeDomainsCount(emails);
+// {
+//   'gmail.com': 3,
+//   'yandex.ru': 2,
+//   'hotmail.com': 2,
+// };
+
+//
+// const users = [
+//     { name: 'Bronn', gender: 'male', birthday: '1973-03-23' },
+//     { name: 'Reigar', gender: 'male', birthday: '1973-11-03' },
+//     { name: 'Eiegon', gender: 'male', birthday: '1963-11-03' },
+//     { name: 'Sansa', gender: 'female', birthday: '2012-11-03' },
+//     { name: 'Jon', gender: 'male', birthday: '1980-11-03' },
+//     { name: 'Robb', gender: 'male', birthday: '1980-05-14' },
+//     { name: 'Tisha', gender: 'female', birthday: '2012-11-03' },
+//     { name: 'Rick', gender: 'male', birthday: '2012-11-03' },
+//     { name: 'Joffrey', gender: 'male', birthday: '1999-11-03' },
+//     { name: 'Edd', gender: 'male', birthday: '1973-11-03' },
+// ];
+//
+// const getMenCountByYear = (data) => {
+//
+// }
 
 /*
 Реализуйте и экспортируйте по умолчанию функцию getMenCountByYear, которая принимает на вход список
