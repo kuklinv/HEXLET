@@ -10,13 +10,29 @@
 
 import getFunction from '../JS_test/tests/functionJest.js';
 
-const without = getFunction();
+const const gt = getFunction();
 
-// BEGIN (write your solution here)
-test('without', () => {
-    expect(without([2, 1, 2, 3], 1, 2)).toEqual([3]);
-    expect(without([2, 1, 2, 3], 4, 5)).toEqual([2,1,2,3]);
-    expect(without([],4,5)).toEqual([]);
+test('gt', () => {
+    expect(gt(3, 1)).toBeTruthy();
+    expect(gt(3, 3)).toBeFalsy();
+    expect(gt(1, 3)).toBeFalsy();
 });
-// END
+
+// _.gt(3, 1);
+// // => true
+//
+// _.gt(3, 3);
+// // => false
+//
+// _.gt(1, 3);
+// // => false
+
+//
+// // BEGIN (write your solution here)
+// test('without', () => {
+//     expect(without([2, 1, 2, 3], 1, 2)).toEqual([3]);
+//     expect(without([2, 1, 2, 3], 4, 5)).toEqual([2,1,2,3]);
+//     expect(without([],4,5)).toEqual([]);
+// });
+// // END
 
