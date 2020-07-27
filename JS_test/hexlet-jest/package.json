@@ -1,0 +1,17 @@
+{
+  "name": "hexlet-jest",
+  "version": "1.0.0",
+  "description": "testing JEST framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kuklinv",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "babel-jest": "^26.1.0",
+    "jest": "^26.1.0"
+  }
+}
