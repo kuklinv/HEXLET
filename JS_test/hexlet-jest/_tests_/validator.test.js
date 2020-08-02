@@ -1,4 +1,4 @@
-import getImplementation from "../implementations/index.js";
+import getImplementation from "../src/implementations/index.js";
 
 const makeValidator = getImplementation();
 
