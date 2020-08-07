@@ -1,12 +1,13 @@
 import getFunction from '../src/functions.js';
 import {beforeEach, test} from "@jest/globals";
+import {cloneDeep} from "lodash";
 
 const set = getFunction();
 
-// beforeEach(() => {
+beforeEach(() => {
 //     // const object = {};
-// const copy = cloneDeep(object);
-// });
+    const copy = cloneDeep(object);
+});
 
 test('set1', () => {
     const object = {};
