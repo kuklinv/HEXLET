@@ -35,3 +35,15 @@ test('set2', () => {
     expect(value).toBe(5);
 });
 
+// test('wrongSet1', ()=>{
+//     set(object,'a[0].b.c', 4);
+//     object.key = '4'
+//     expect(object.key).toBe('4');
+// });
+//
+// test('wrongSet2', ()=>{
+//     set(object,'a[0].b.c', 4);
+//     object[a[0].b.c] = '4'
+//     expect(object.key).toBe('4');
+// });
+
