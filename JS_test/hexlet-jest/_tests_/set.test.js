@@ -39,8 +39,17 @@ test('set2', () => {
 test('mybeWrong',()=>{
     set(object, ['x', '0', 'y', 'z'], 5);
     nativeObject.key = 5;
-    expect(object).toEqual(nativeObject);
+    expect(object[0]).toEqual(nativeObject[0]);
 })
+
+/*
+my be
+var objects = [{ 'a': 1 }, { 'b': 2 }];
+
+var deep = _.cloneDeep(objects);
+console.log(deep[0] === objects[0]);
+Так ведь там проверяется toEqual, а не toBe. То есть сравнение идет по структуре.
+ */
 
 // test('wrongSet1', ()=>{
 //     set(object,'a[0].b.c', 4);
