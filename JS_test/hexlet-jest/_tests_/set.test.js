@@ -1,13 +1,19 @@
 import getFunction from '../src/functions.js';
-import {test} from "@jest/globals";
+import {beforeEach, test} from "@jest/globals";
 import _ from 'lodash';
 
 const set = getFunction();
 
+const object = {};
+
+beforeEach(()=> {
+return  _.cloneDeep(object);
+});
+
 test('set1', () => {
-    const object = {};
-    const copy = _.cloneDeep(object);
-    set(copy, 'a[0].b.c', 4);
+    // const object = {};
+    // const copy = _.cloneDeep(object);
+    set(object, 'a[0].b.c', 4);
 let {
         a: [
             {
@@ -16,16 +22,16 @@ let {
                 }
             }
         ]
-    } = copy;
+    } = object;
     expect(value).toBe(4);
 })
 
 
 test('set2', () => {
-    const object = {};
-    const copy = _.cloneDeep(object);
-    set(copy, ['x', '0', 'y', 'z'], 5);
-    let value = copy.x[0].y.z
+    // const object = {};
+    // const copy = _.cloneDeep(object);
+    set(object, ['x', '0', 'y', 'z'], 5);
+    let value = object.x[0].y.z
     expect(value).toBe(5);
 });
 
