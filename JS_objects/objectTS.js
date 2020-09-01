@@ -1,3 +1,19 @@
+// modification
+var lesson = {
+    name: 'ДеструКТУРИЗАЦИЯ',
+    description: 'каК удивитЬ колек'
+};
+console.log(lesson);
+var _ = require('lodash');
+function normalize(object) {
+    var name = object.name;
+    var description = object.description;
+    object.name = _.capitalize(name);
+    object.description = description.toLocaleLowerCase();
+}
+normalize(lesson);
+console.log(lesson);
+// export  default normalize;
 // hash
 //example:
 // import { make, set, get } from './map.js';
@@ -12,33 +28,30 @@
 /*
 Для внутреннего представления словаря, используйте массив, где индекс содержит хеш записи, а значение — key и value (их можно упаковать в массив).
 */
-function make() {
-    var internal = [];
-    return [internal];
-    // const newMap = [[index],[key, value]];
-    // return newMap;
-}
-function get(map, key, defaultValue) {
-    if (defaultValue === void 0) { defaultValue = null; }
-    var hash = crc32.str('key');
-    var index = Math.abs(hash) % 1000;
-    if (map[index]) {
-        return map[index];
-    }
-    else
-        return defaultValue; /// add collision
-}
-function set(map, key, value) {
-    var internal = [];
-    var hash = crc32.str('key');
-    var index = Math.abs(hash) % 1000;
-    if (!internal[index]) {
-        internal[index] = ['key', 'value'];
-        return true;
-    }
-    else
-        ;
-}
+// function make(){
+//     const internal = [];
+//     return [internal];
+//     // const newMap = [[index],[key, value]];
+//     // return newMap;
+// }
+//
+// function get(map, key, defaultValue = null){
+//     const hash = crc32.str('key');
+//     const index = Math.abs(hash) % 1000;
+//     if(map[index]) {
+//         return map[index];
+//     } else return defaultValue;          /// add collision
+// }
+//
+// function set(map, key, value){
+//     const internal = [];
+//     const hash = crc32.str('key');
+//     const index = Math.abs(hash) % 1000;
+//     if(!internal[index]){
+//         internal[index] = ['key', 'value'];
+//         return true;
+//     } else ...... /// add  collision
+// }
 ////8888888888888888888888888888888************* teacher
 // // BEGIN
 // const getIn = (data, keys) => {
