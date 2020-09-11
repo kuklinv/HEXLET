@@ -1,6 +1,6 @@
 "use strict";
 // links
-// exports.__esModule = true;
+// exports.__esModule = true;    !!!! my be in config???
 const is = (cmp1, cmp2) => {
     if (!Object.keys(cmp1).length == Object.keys(cmp2).length) {
         return  false;
