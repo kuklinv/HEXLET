@@ -1,18 +1,48 @@
+"use strict";
+// links
+// exports.__esModule = true;
+const is = (cmp1, cmp2) => {
+    if (!Object.keys(cmp1).length == Object.keys(cmp2).length) {
+        return  false;
+    }
+
+        for (let key in cmp1) {
+            if (cmp2.hasOwnProperty(key)) {
+                if (cmp1[key] == cmp2[key]) {
+                    return true;
+                } else return false;
+            }
+        }
+    }
+
+// export default is;
+// using
+var company1 = { name: 'Hexlet', website: 'https://hexlet.io' };
+var company2 = { name: 'CodeBasics', website: 'https://code-basics.com' };
+var company3 = { name: 'Hexlet', website: 'https://hexlet.io' };
+var company4 = { name: 'Hexlet', website: 'https://hexlet.io' };
+// is(company3, company4);
+// is(company3, company4);
+// console.log(is(company1, company2)); // true
+console.log(is(company1, company2));
+console.log(is(company3, company4));
 // modification
-var lesson = {
-    name: 'ДеструКТУРИЗАЦИЯ',
-    description: 'каК удивитЬ колек'
-};
-console.log(lesson);
-var _ = require('lodash');
-function normalize(object) {
-    var name = object.name;
-    var description = object.description;
-    object.name = _.capitalize(name);
-    object.description = description.toLocaleLowerCase();
-}
-normalize(lesson);
-console.log(lesson);
+// const lesson = {
+//   name: 'ДеструКТУРИЗАЦИЯ',
+//   description: 'каК удивитЬ колек',
+// };
+// console.log(lesson);
+// const _ = require('lodash');
+//
+// function normalize (object : object) {
+//     let name : string = object.name;
+//     let description : string = object.description;
+//     object.name = _.capitalize(name);
+//     object.description = description.toLocaleLowerCase();
+// }
+//
+// normalize(lesson);
+// console.log(lesson)
 // export  default normalize;
 // hash
 //example:

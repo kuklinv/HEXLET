@@ -1,21 +1,65 @@
+// links
+
+import {it} from "@jest/globals";
+
+////////////////////////////////////////////!!!! last working version in JS!!!
+
+const is = (cmp1, cmp2) => {
+    if(Object.keys(cmp1).length == Object.keys(cmp2).length) {
+        for (let key in cmp1) {
+            if (cmp2.hasOwnProperty(key)) {
+                if(!cmp1[key] == cmp2[key]){
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+     // выбираем ключи первого обьекта в массив
+    // смотрим второй обьект на совпадение всех ключей
+    // если да то сравниваем по каждому ключу значения
+    // let firstCompKeys = Object.keys(cmp1);
+    // let secCompKeys = Object.keys(cmp2);
+    // console.log(firstCompKeys);
+    // console.log(secCompKeys);
+    // console.log(firstCompKeys.forEach((item) => console.log(item)));
+    // console.log(secCompKeys.forEach((item) => console.log(item)));
+    // console.log(firstCompKeys == secCompKeys);
+    }
+
+// using
+const company1 = { name: 'Hexlet', website: 'https://hexlet.io' };
+const company2 = { name: 'CodeBasics', website: 'https://code-basics.com' };
+
+
+const company3 = { name: 'Hexlet', website: 'https://hexlet.io' };
+const company4 = { name: 'Hexlet', website: 'https://hexlet.io' };
+
+// is(company3, company4);
+// is(company3, company4);
+
+// console.log(is(company1, company2)); // true
+console.log(is(company3, company4));
+
+
 // modification
 
-const lesson = {
-  name: 'ДеструКТУРИЗАЦИЯ',
-  description: 'каК удивитЬ колек',
-};
-console.log(lesson);
-const _ = require('lodash');
-
-function normalize (object : object) {
-    let name : string = object.name;
-    let description : string = object.description;
-    object.name = _.capitalize(name);
-    object.description = description.toLocaleLowerCase();
-}
-
-normalize(lesson);
-console.log(lesson)
+// const lesson = {
+//   name: 'ДеструКТУРИЗАЦИЯ',
+//   description: 'каК удивитЬ колек',
+// };
+// console.log(lesson);
+// const _ = require('lodash');
+//
+// function normalize (object : object) {
+//     let name : string = object.name;
+//     let description : string = object.description;
+//     object.name = _.capitalize(name);
+//     object.description = description.toLocaleLowerCase();
+// }
+//
+// normalize(lesson);
+// console.log(lesson)
 
 // export  default normalize;
 
