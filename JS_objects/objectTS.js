@@ -5,6 +5,9 @@ const is = (cmp1, cmp2) => {
     if (!Object.keys(cmp1).length == Object.keys(cmp2).length) {
         return  false;
     }
+    if(Object.keys(cmp1).length == 0 && Object.keys(cmp2).length == 0) {
+        return true;
+    }
 
         for (let key in cmp1) {
             if (cmp2.hasOwnProperty(key)) {
