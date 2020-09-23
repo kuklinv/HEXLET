@@ -1,32 +1,28 @@
 // links
 
-import {it} from "@jest/globals";
-
-////////////////////////////////////////////!!!! last working version in JS!!!
-
 const is = (cmp1, cmp2) => {
-    if(Object.keys(cmp1).length == Object.keys(cmp2).length) {
-        for (let key in cmp1) {
-            if (cmp2.hasOwnProperty(key)) {
-                if(!cmp1[key] == cmp2[key]){
-                    return false;
-                }
+  if (Object.keys(cmp1).length !== Object.keys(cmp2).length){
+      return false;
+  }
+  if (Object.keys(cmp1).length == 0 && Object.keys(cmp2).length == 0){
+      return true;
+  }
+  for(let key in cmp1){
+      if ((cmp1.hasOwnProperty(key))){
+          if(cmp1[key] !== cmp2[key]){
+              return false;
+          }
+      }
+  }
+    for(let key in cmp2){
+        if ((cmp2.hasOwnProperty(key))){
+            if(cmp2[key] !== cmp1[key]){
+                return false;
             }
-            return true;
         }
     }
-     // выбираем ключи первого обьекта в массив
-    // смотрим второй обьект на совпадение всех ключей
-    // если да то сравниваем по каждому ключу значения
-    // let firstCompKeys = Object.keys(cmp1);
-    // let secCompKeys = Object.keys(cmp2);
-    // console.log(firstCompKeys);
-    // console.log(secCompKeys);
-    // console.log(firstCompKeys.forEach((item) => console.log(item)));
-    // console.log(secCompKeys.forEach((item) => console.log(item)));
-    // console.log(firstCompKeys == secCompKeys);
+    return true;
     }
-
 // using
 const company1 = { name: 'Hexlet', website: 'https://hexlet.io' };
 const company2 = { name: 'CodeBasics', website: 'https://code-basics.com' };
@@ -35,11 +31,12 @@ const company2 = { name: 'CodeBasics', website: 'https://code-basics.com' };
 const company3 = { name: 'Hexlet', website: 'https://hexlet.io' };
 const company4 = { name: 'Hexlet', website: 'https://hexlet.io' };
 
-// is(company3, company4);
-// is(company3, company4);
+const company5 = { name: 'Hexlet', website: 'https://hexlet.io' };
+const company6 = { name: 'Hexlet', website: 'https://code-basics.com' };
 
-// console.log(is(company1, company2)); // true
-console.log(is(company3, company4));
+console.log(is(company1, company2)); // false
+console.log(is(company3, company4)); //true
+console.log(is(company5, company6)); //false
 
 
 // modification

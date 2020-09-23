@@ -1,52 +1,37 @@
-// "use strict";
 // links
-// exports.__esModule = true;    !!!! my be in config???
-const is = (cmp1, cmp2) => {
-    if (!Object.keys(cmp1).length == Object.keys(cmp2).length) {
-        return  false;
+var is = function (cmp1, cmp2) {
+    if (Object.keys(cmp1).length !== Object.keys(cmp2).length) {
+        return false;
     }
-    if(Object.keys(cmp1).length == 0 && Object.keys(cmp2).length == 0) {
+    if (Object.keys(cmp1).length == 0 && Object.keys(cmp2).length == 0) {
         return true;
     }
-
-    for (const [key,value] of Object.entries(cmp1)){
-
+    for (var key in cmp1) {
+        if ((cmp1.hasOwnProperty(key))) {
+            if (cmp1[key] !== cmp2[key]) {
+                return false;
+            }
+        }
     }
-}
-// for(let i = 0; i <= cmp1.length; i += 1){
-// if(cmp2.hasOwnProperty((cmp1[i]))){
-//     if (!cmp1[i] == cmp2[i]){
-//         return false;
-//     }
-// }
-// }
-// return true;
-// }
-
-    //     for (let key in cmp1) {
-    //         if (cmp2.hasOwnProperty(key)) {
-    //             if (!cmp1[key] === cmp2[key]) {
-    //                 return false;
-    //             }
-    //         }
-    //     }
-    //     return true;
-    // }
-
-// export default is;
+    for (var key in cmp2) {
+        if ((cmp2.hasOwnProperty(key))) {
+            if (cmp2[key] !== cmp1[key]) {
+                return false;
+            }
+        }
+    }
+    return true;
+};
 // using
 var company1 = { name: 'Hexlet', website: 'https://hexlet.io' };
 var company2 = { name: 'CodeBasics', website: 'https://code-basics.com' };
 var company3 = { name: 'Hexlet', website: 'https://hexlet.io' };
 var company4 = { name: 'Hexlet', website: 'https://hexlet.io' };
-const company5 = { name: 'Hexlet', website: 'https://hexlet.io' };
-const company6 = { name: 'Hexlet', website: 'https://code-basics.com' };
-// is(company3, company4);
-// is(company3, company4);
-// console.log(is(company1, company2)); // true
-console.log(is(company1, company2));
-console.log(is(company3, company4));
-console.log(is(company5, company6));
+var company5 = { name: 'Hexlet', website: 'https://hexlet.io' };
+var company6 = { name: 'Hexlet', website: 'https://code-basics.com' };
+console.log(is(company1, company2)); // false
+console.log(is(company3, company4)); //true
+console.log(is(company5, company6)); //false
 // modification
 // const lesson = {
 //   name: 'ДеструКТУРИЗАЦИЯ',
