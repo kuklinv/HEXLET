@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 // links
 // exports.__esModule = true;    !!!! my be in config???
 const is = (cmp1, cmp2) => {
@@ -9,14 +9,29 @@ const is = (cmp1, cmp2) => {
         return true;
     }
 
-        for (let key in cmp1) {
-            if (cmp2.hasOwnProperty(key)) {
-                if (cmp1[key] == cmp2[key]) {
-                    return true;
-                } else return false;
-            }
-        }
+    for (const [key,value] of Object.entries(cmp1)){
+
     }
+}
+// for(let i = 0; i <= cmp1.length; i += 1){
+// if(cmp2.hasOwnProperty((cmp1[i]))){
+//     if (!cmp1[i] == cmp2[i]){
+//         return false;
+//     }
+// }
+// }
+// return true;
+// }
+
+    //     for (let key in cmp1) {
+    //         if (cmp2.hasOwnProperty(key)) {
+    //             if (!cmp1[key] === cmp2[key]) {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+    //     return true;
+    // }
 
 // export default is;
 // using
@@ -24,11 +39,14 @@ var company1 = { name: 'Hexlet', website: 'https://hexlet.io' };
 var company2 = { name: 'CodeBasics', website: 'https://code-basics.com' };
 var company3 = { name: 'Hexlet', website: 'https://hexlet.io' };
 var company4 = { name: 'Hexlet', website: 'https://hexlet.io' };
+const company5 = { name: 'Hexlet', website: 'https://hexlet.io' };
+const company6 = { name: 'Hexlet', website: 'https://code-basics.com' };
 // is(company3, company4);
 // is(company3, company4);
 // console.log(is(company1, company2)); // true
 console.log(is(company1, company2));
 console.log(is(company3, company4));
+console.log(is(company5, company6));
 // modification
 // const lesson = {
 //   name: 'ДеструКТУРИЗАЦИЯ',
