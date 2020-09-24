@@ -1,37 +1,77 @@
+// object properties // has words checker
+// import _ from 'lodash';
+//
+// const countWords = (text) => {
+//     let textArray = _.words(text.toLowerCase());
+//     console.log(textArray);
+//     const resObj = {};
+//
+//     for (const word of textArray) {
+//         if (!_.has(resObj, word)) {
+//             resObj[word] = 1;
+//         } else {
+//             resObj[word] += 1;
+//         }
+//     }
+// }
+//
+// const text1 = 'one two three two ONE one wow';
+// const text2 = 'another one sentence with strange Words words';
+// console.log(countWords(''));
+// console.log(countWords(text1));
+// console.log(countWords(text2));
+// {}
+// {
+//   one: 3,
+//   two: 2,
+//   three: 1,
+//   wow: 1,
+// }
+//   another: 1,
+//   one: 1,
+//   sentence: 1,
+//   with: 1,
+//   strange: 1,
+//   words: 2,
+// }
 // links
-var is = function (cmp1, cmp2) {
-    if (Object.keys(cmp1).length !== Object.keys(cmp2).length) {
-        return false;
-    }
-    if (Object.keys(cmp1).length == 0 && Object.keys(cmp2).length == 0) {
-        return true;
-    }
-    for (var key in cmp1) {
-        if ((cmp1.hasOwnProperty(key))) {
-            if (cmp1[key] !== cmp2[key]) {
-                return false;
-            }
-        }
-    }
-    for (var key in cmp2) {
-        if ((cmp2.hasOwnProperty(key))) {
-            if (cmp2[key] !== cmp1[key]) {
-                return false;
-            }
-        }
-    }
-    return true;
-};
+// const is = (cmp1, cmp2) => {
+//   if (Object.keys(cmp1).length !== Object.keys(cmp2).length){
+//       return false;
+//   }
+//   if (Object.keys(cmp1).length == 0 && Object.keys(cmp2).length == 0){
+//       return true;
+//   }
+//   for(let key in cmp1){
+//       if ((cmp1.hasOwnProperty(key))){
+//           if(cmp1[key] !== cmp2[key]){
+//               return false;
+//           }
+//       }
+//   }
+//     for(let key in cmp2){
+//         if ((cmp2.hasOwnProperty(key))){
+//             if(cmp2[key] !== cmp1[key]){
+//                 return false;
+//             }
+//         }
+//     }
+//     return true;
+//     }
 // using
-var company1 = { name: 'Hexlet', website: 'https://hexlet.io' };
-var company2 = { name: 'CodeBasics', website: 'https://code-basics.com' };
-var company3 = { name: 'Hexlet', website: 'https://hexlet.io' };
-var company4 = { name: 'Hexlet', website: 'https://hexlet.io' };
-var company5 = { name: 'Hexlet', website: 'https://hexlet.io' };
-var company6 = { name: 'Hexlet', website: 'https://code-basics.com' };
-console.log(is(company1, company2)); // false
-console.log(is(company3, company4)); //true
-console.log(is(company5, company6)); //false
+// const company1 = { name: 'Hexlet', website: 'https://hexlet.io' };
+// const company2 = { name: 'CodeBasics', website: 'https://code-basics.com' };
+//
+//
+// const company3 = { name: 'Hexlet', website: 'https://hexlet.io' };
+// const company4 = { name: 'Hexlet', website: 'https://hexlet.io' };
+//
+// const company5 = { name: 'Hexlet', website: 'https://hexlet.io' };
+// const company6 = { name: 'Hexlet', website: 'https://code-basics.com' };
+//
+// console.log(is(company1, company2)); // false
+// console.log(is(company3, company4)); //true
+// console.log(is(company5, company6)); //false
 // modification
 // const lesson = {
 //   name: 'ДеструКТУРИЗАЦИЯ',
