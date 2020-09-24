@@ -1,7 +1,7 @@
 {
   "name": "hexlet",
   "version": "1.0.0",
-  "description": "hexlet tasks.array",
+  "description": "hexlet tasks",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
