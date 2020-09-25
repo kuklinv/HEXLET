@@ -1,5 +1,32 @@
+// objects merge
 
+import __ from "lodash/fp/__"; // pick();
+const company = {
+    name: null,
+    state: 'moderating',
+};
 
+const data = {
+    name: 'Hexlet',
+    state: 'published',
+};
+
+const fill = (objectInn, keys, objectData) =>{
+
+}
+
+// Вызовы ниже нужно рассматривать как независимые
+fill(company, ['name'], data);
+// {
+//   name: 'Hexlet',
+//   state: 'moderating',
+// }
+
+fill(company, [], data);
+// {
+//   name: 'Hexlet',
+//   state: 'published',
+// }
 
 // nested objects!
 
