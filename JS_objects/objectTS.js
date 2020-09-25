@@ -1,3 +1,44 @@
+// nested objects!
+var data = {
+    user: 'ubuntu',
+    hosts: {
+        0: {
+            name: 'web1'
+        },
+        1: {
+            name: 'web2',
+            "null": 3,
+            active: false
+        }
+    }
+};
+var get = function (data, keys) {
+    // const getIn = (data, keys) => {
+    var current = data;
+    for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
+        var key = keys_1[_i];
+        if (!current.hasOwnProperty(key)) {
+            return null;
+        }
+        current = current[key];
+    }
+    return current;
+};
+// export default getIn;
+console.log(get(data, ['undefined']));
+console.log(get(data, ['user']));
+console.log(get(data, ['user', 'ubuntu']));
+console.log(get(data, ['hosts', 1, 'name']));
+console.log(get(data, ['hosts', 0]));
+console.log(get(data, ['hosts', 1, null]));
+console.log(get(data, ['hosts', 1, 'active']));
+// null
+// 'ubuntu'
+// null
+// 'web2'
+// { name: 'web1' }
+// 3
+// false
 // object properties // has words checker
 // import _ from 'lodash';
 //
