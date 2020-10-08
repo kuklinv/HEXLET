@@ -1,37 +1,68 @@
-// nested objects!
+"use strict";
+// objects merge
+exports.__esModule = true;
+// import __ from "lodash/fp/__"; // pick();
+// @ts-ignore
+var lodash_1 = require("lodash");
+var company = {
+    name: null,
+    state: 'moderating'
+};
 var data = {
-    user: 'ubuntu',
-    hosts: {
-        0: {
-            name: 'web1'
-        },
-        1: {
-            name: 'web2',
-            "null": 3,
-            active: false
-        }
-    }
+    name: 'Hexlet',
+    state: 'published'
 };
-var get = function (data, keys) {
-    // const getIn = (data, keys) => {
-    var current = data;
-    for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
-        var key = keys_1[_i];
-        if (!current.hasOwnProperty(key)) {
-            return null;
-        }
-        current = current[key];
-    }
-    return current;
+var fill = function (objectInn, keys, objectData) {
+    var res = lodash_1["default"].pick(objectInn, keys);
+    console.log(res);
 };
-// export default getIn;
-console.log(get(data, ['undefined']));
-console.log(get(data, ['user']));
-console.log(get(data, ['user', 'ubuntu']));
-console.log(get(data, ['hosts', 1, 'name']));
-console.log(get(data, ['hosts', 0]));
-console.log(get(data, ['hosts', 1, null]));
-console.log(get(data, ['hosts', 1, 'active']));
+// Вызовы ниже нужно рассматривать как независимые
+fill(company, ['name'], data);
+// {
+//   name: 'Hexlet',
+//   state: 'moderating',
+// }
+fill(company, [], data);
+// {
+//   name: 'Hexlet',
+//   state: 'published',
+// }
+// nested objects!
+// const data = {
+//     user: 'ubuntu',
+//     hosts: {
+//         0: {
+//             name: 'web1',
+//         },
+//         1: {
+//             name: 'web2',
+//             null: 3,
+//             active: false,
+//         },
+//     },
+// };
+//
+// const get = (data:object, keys:any):any => {
+// // const getIn = (data, keys) => {
+//   let current = data;
+//   for (const key of keys) {
+//     if (!current.hasOwnProperty(key)) {
+//       return null;
+//     }
+//     current = current[key];
+//   }
+//
+//   return current;
+// };
+//
+// // export default getIn;
+// console.log(get(data, ['undefined']));
+// console.log(get(data, ['user']));
+// console.log(get(data, ['user', 'ubuntu']));
+// console.log(get(data, ['hosts', 1, 'name']));
+// console.log(get(data, ['hosts', 0]));
+// console.log(get(data, ['hosts', 1, null]));
+// console.log(get(data, ['hosts', 1, 'active']));
 // null
 // 'ubuntu'
 // null

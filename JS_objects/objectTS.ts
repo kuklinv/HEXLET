@@ -1,6 +1,9 @@
 // objects merge
 
-import __ from "lodash/fp/__"; // pick();
+// import __ from "lodash/fp/__"; // pick();
+
+// @ts-ignore
+import _ from "lodash";
 const company = {
     name: null,
     state: 'moderating',
@@ -12,7 +15,8 @@ const data = {
 };
 
 const fill = (objectInn, keys, objectData) =>{
-
+const res = _.pick(objectInn, keys);
+console.log(res);
 }
 
 // Вызовы ниже нужно рассматривать как независимые
