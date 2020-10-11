@@ -1,8 +1,5 @@
 // objects merge
 
-// import __ from "lodash/fp/__"; // pick();
-
-// @ts-ignore
 import _ from "lodash";
 const company = {
     name: null,

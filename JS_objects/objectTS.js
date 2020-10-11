@@ -1,8 +1,6 @@
 "use strict";
 // objects merge
 exports.__esModule = true;
-// import __ from "lodash/fp/__"; // pick();
-// @ts-ignore
 var lodash_1 = require("lodash");
 var company = {
     name: null,
