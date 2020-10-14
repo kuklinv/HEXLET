@@ -1,6 +1,6 @@
 // objects merge
 
-import { pick } from "lodash";
+import { pick } from "lodash/fp";
 const company = {
   name: null,
   state: "moderating",
@@ -11,7 +11,7 @@ const data = {
   state: "published",
 };
 
-const fill = (objectInn, keys, objectData) => {
+const fill = (objectInn, keys) => {
   const res = pick(objectInn, keys);
   console.log(res);
 };
