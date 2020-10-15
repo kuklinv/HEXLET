@@ -1,24 +1,34 @@
 // objects merge
+
 // import __ from "lodash/fp/__"; // pick();
+
 // @ts-ignore
 import _ from "lodash";
+// import {cons} from "../trials/pairWithoutFunction";
 const company = {
     name: null,
     state: 'moderating',
 };
+
 const data = {
     name: 'Hexlet',
     state: 'published',
 };
+
 const keys = Object.keys(data);
 console.log(keys);
+
 const testPick = _.pick(company, keys);
 console.log(testPick);
-// const fill = (objectInn, keys, objectData) =>{
-// const res = _.pick(objectInn, keys);
-// return res;
-// // console.log(res);
+
+// const fill = (objectInn, keys, objectData) =>{ // TODO: this my stop
+//     if(keys.lenghth == 0){
+//
+//     }
+//     const searchingKeys = _.pick(objectInn, keys);
+//
 // }
+
 // Вызовы ниже нужно рассматривать как независимые
 // console.log(fill(company, ['name'], data));
 // fill(company, ['name'], data);
@@ -32,7 +42,9 @@ console.log(testPick);
 //   name: 'Hexlet',
 //   state: 'published',
 // }
+
 // nested objects!
+
 // const data = {
 //     user: 'ubuntu',
 //     hosts: {
@@ -68,14 +80,17 @@ console.log(testPick);
 // console.log(get(data, ['hosts', 0]));
 // console.log(get(data, ['hosts', 1, null]));
 // console.log(get(data, ['hosts', 1, 'active']));
-// null
+
+ // null
 // 'ubuntu'
 // null
-// 'web2'
-// { name: 'web1' }
-// 3
-// false
+ // 'web2'
+ // { name: 'web1' }
+ // 3
+ // false
+
 // object properties // has words checker
+
 // import _ from 'lodash';
 //
 // const countWords = (text) => {
@@ -111,7 +126,9 @@ console.log(testPick);
 //   strange: 1,
 //   words: 2,
 // }
+
 // links
+
 // const is = (cmp1, cmp2) => {
 //   if (Object.keys(cmp1).length !== Object.keys(cmp2).length){
 //       return false;
@@ -149,7 +166,10 @@ console.log(testPick);
 // console.log(is(company1, company2)); // false
 // console.log(is(company3, company4)); //true
 // console.log(is(company5, company6)); //false
+
+
 // modification
+
 // const lesson = {
 //   name: 'ДеструКТУРИЗАЦИЯ',
 //   description: 'каК удивитЬ колек',
@@ -166,7 +186,9 @@ console.log(testPick);
 //
 // normalize(lesson);
 // console.log(lesson)
+
 // export  default normalize;
+
 // hash
 //example:
 // import { make, set, get } from './map.js';
@@ -205,7 +227,9 @@ console.log(testPick);
 //         return true;
 //     } else ...... /// add  collision
 // }
+
 ////8888888888888888888888888888888************* teacher
+
 // // BEGIN
 // const getIn = (data, keys) => {
 //   let current = data;
@@ -215,11 +239,16 @@ console.log(testPick);
 //     }
 //     current = current[key];
 //   }
+
 //   return current;
 // };
+
 // export default getIn;
 // END
+
+
 // try last version
+
 // let data = {
 //   user: "ubuntu",
 //   hosts: {
@@ -239,8 +268,10 @@ console.log(testPick);
 //     findKaysArray[0] == null ||
 //     findKaysArray[0] == "undefined"
 //   ) return null;
+
 //     let i = 0;
 //     return recTestKeys(objectInn, findKaysArray, i);
+
 //     function recTestKeys(obj, key, index) {
 //       let objInner = key[index];
 //       if(obj.hasOwnProperty(objInner)){
@@ -254,6 +285,7 @@ console.log(testPick);
 //     } else return null;
 //     }
 // }
+
 // console.log(getIn(data, ["undefined"])); // null //+
 // console.log(getIn(data, ["user"])); // 'ubuntu' //+
 // console.log(getIn(data, ["user", "ubuntu"])); // null+
@@ -261,7 +293,9 @@ console.log(testPick);
 // console.log(getIn(data, ["hosts", 0])); // { name: 'web1' } +
 // console.log(getIn(data, ["hosts", 1, null])); // 3
 // console.log(getIn(data, ["hosts", 1, "active"])); // false
+
 //////////////////// ok its only 1-2 tests ***********************************
+
 // let data = {
 //   user: "ubuntu",
 //   hosts: {
@@ -281,6 +315,8 @@ console.log(testPick);
 //     findKaysArray[0] == null ||
 //     findKaysArray[0] == "undefined"
 //   ) return null;
+
+
 //     function recTestKeys(obj, key, i) {
 //         if (obj.hasOwnProperty(key[i]) && typeof(key[i]) == 'object') {
 //             return recTestKeys(obj[key[i]], key[i], i+1);
@@ -290,7 +326,9 @@ console.log(testPick);
 //     }
 //     let i = 0;
 //     return recTestKeys(objectInn, findKaysArray[i], i);
+
 // }
+
 // console.log(getIn(data, ["undefined"])); // null //+
 // console.log(getIn(data, ["user"])); // 'ubuntu' //+
 // console.log(getIn(data, ["user", "ubuntu"])); // null
@@ -298,7 +336,9 @@ console.log(testPick);
 // console.log(getIn(data, ["hosts", 0])); // { name: 'web1' }
 // console.log(getIn(data, ["hosts", 1, null])); // 3
 // console.log(getIn(data, ["hosts", 1, "active"])); // false
+
 //********************************************************* */
+
 // function recTestKeys(obj, keys) {
 // var i = 0;
 // if (obj.hasOwnProperty(keys[i])) return obj[keys[i]];
@@ -306,11 +346,13 @@ console.log(testPick);
 //   return recTestKeys(obj[keys[i]], keys[i + 1]);
 // } else return null;
 // }
+
 // function recTestKeys(obj, keys){
 //   let i = 0;
 //   if (obj.hasOwnProperty(keys[i])) {
 //     return recTestKeys(obj[keys[i]], keys[i + 1]);
 //   } else return obj[keys[i]];
+
 //   }
 // }
 //   let i = 0;
@@ -323,6 +365,7 @@ console.log(testPick);
 //       }
 //       // return null;
 // };
+
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ore forEach
 // for (const word of words) {
 //     if (!_.has(result, word)) {
@@ -332,6 +375,8 @@ console.log(testPick);
 //       result[word] += 1;
 //     }
 //   }
+
+
 // var findKaysArrayToString = findKaysArray.toString().split(","); // any input types => string
 // console.log(findKaysArray);
 // var kaysArrLen = findKaysArrayToString.length;
@@ -345,12 +390,15 @@ console.log(testPick);
 //     return recTestKeys(obj[keys[i]], keys[i + 1]);
 //   } else return null;
 //   }
+
+
 // const users = [
 //   { name: 'Bronn', gender: 'male', birthday: '1973-03-23' },
 //   { name: 'Reigar', gender: 'male', birthday: '1973-11-03' },
 //   { name: 'Eiegon', gender: 'male', birthday: '1963-11-03' },
 //   { name: 'Sansa', gender: 'female', birthday: '2012-11-03' },
 // ];
+
 // const getSortedNames = (users) => {
 //   let resultNames = [];
 //   for(let user of users) {
@@ -358,18 +406,25 @@ console.log(testPick);
 //  }
 //    return.resultNames.sort();
 // }
+
 // // export default getSortedNames;
+
+
 // getSortedNames(users); // ['Bronn', 'Eiegon', 'Reigar', 'Sansa']
+
 // // const data = {
 // //   user: 'ubuntu',
 // //   cores: 4,
 // //   os: 'linux',
 // // };
+
 //     const data = {
 //       user: 'ubuntu',
 //       os: 'linux',
 //       virtual: false,
 //     };
+
+
 // const pick = (data, [...searchKeys]) => {
 // 	let result = {};
 // 	let dataKeys = Object.keys(data);
@@ -383,11 +438,15 @@ console.log(testPick);
 //   });
 //   return result;
 // }
+
 // // pick(data, ['user']);       // { user: 'ubuntu' }
 // // pick(data, ['user', 'os']); // { user: 'ubuntu', os: 'linux' }
 // // pick(data, []);             // {}
 // // pick(data, ['none']);       // {}
+
 // pick(data, ['virtual']) // { virtual: false }
+
+
 // var data = {
 //     user: "ubuntu",
 //     hosts: {
@@ -425,9 +484,11 @@ console.log(testPick);
 // console.log(getIn(data, ["hosts", 0])); // { name: 'web1' }
 // console.log(getIn(data, ["hosts", 1, null])); // 3
 // console.log(getIn(data, ["hosts", 1, "active"])); // false
+
 // if(_.has(objectInn, findKaysArray)) {
 //   console.log('yes');
 // }
+
 // console.log(getIn(data, ["undefined"])); // null //+
 // console.log(getIn(data, ["user"])); // 'ubuntu' //+
 // console.log(getIn(data, ["user", "ubuntu"])); // null//+
@@ -435,6 +496,7 @@ console.log(testPick);
 // console.log(getIn(data, ["hosts", 0])); // { name: 'web1' }
 // console.log(getIn(data, ["hosts", 1, null])); // 3
 // console.log(getIn(data, ["hosts", 1, "active"])); // false
+
 // var data = {
 //     user: "ubuntu",
 //     hosts: {
@@ -485,6 +547,8 @@ console.log(testPick);
 // console.log(getIn(data, ["hosts", 0])); // { name: 'web1' }
 // console.log(getIn(data, ["hosts", 1, null])); // 3
 // console.log(getIn(data, ["hosts", 1, "active"])); // false
+
+
 // const data = {
 //     user: 'ubuntu',
 //     hosts: {
@@ -498,12 +562,14 @@ console.log(testPick);
 //         },
 //     },
 // };
+
 //// следующая итерация - перестройка алгоритма.
 // проверяем совпадение ключей
 // если есть то проверяем обьект ли этот ключ, если  - да  - идем внутрь, если нет, то возвращаем значение ключа
 //
 //
 //разбираем 4-й тест!!!!!!!!!!!!!!!!!!!!!!!
+
 // const getIn = (objectInn, findKaysArray) => {
 //     if (findKaysArray.length == 0 || findKaysArray[0] == null || findKaysArray[0] == 'undefined') return null;
 //     let objectInnKeys = Object.keys(objectInn);
@@ -519,6 +585,8 @@ console.log(testPick);
 //             }
 //         } //else return objectInn[objectInnKeys[j]];
 //     }
+
+
 //     function recTestKeys(key) {
 //         for (let i = 0; i < findKaysArray.length; i++) {
 //             // console.log(objectInn[key])
@@ -528,6 +596,7 @@ console.log(testPick);
 //         }
 //     }
 // }
+
 // console.log(getIn(data, ['undefined'])); //+
 // // getIn(data, ['undefined']); // null
 // console.log(getIn(data, ['user'])); // 'ubuntu' //+
@@ -541,6 +610,7 @@ console.log(testPick);
 // console.log(getIn(data, ['hosts', 1, null]));
 // // getIn(data, ['hosts', 1, 'active']); // false
 // console.log(getIn(data, ['hosts', 1, 'active']));
+
 // // // const getJsonFileData = () => {
 // // // //     "common": {
 // // // //         "files": [
@@ -552,6 +622,8 @@ console.log(testPick);
 // // // //     }
 // // // // }
 // // // }
+
+
 // const data = {
 //     "common": {
 //         "files": [
@@ -562,8 +634,10 @@ console.log(testPick);
 //         "outdir": "/dist"
 //     }
 // }
+
 // const getJsonFileData = (data) => {
 //     let jsonObj = JSON.stringify(data);
 //     console.log(jsonObj);
 // }
+
 // getJsonFileData(data);

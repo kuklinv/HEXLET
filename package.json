@@ -12,6 +12,7 @@
   },
   "author": "kuklinv",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/kuklinv/HEXLET/issues"
   },
@@ -26,7 +27,9 @@
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/node": "^7.10.5",
+    "@babel/parser": "^7.12.0",
     "@babel/preset-env": "^7.11.5",
+    "@babel/types": "^7.12.0",
     "@types/lodash": "^4.14.162",
     "babel-jest": "^26.5.2",
     "commonjs": "0.0.1",
