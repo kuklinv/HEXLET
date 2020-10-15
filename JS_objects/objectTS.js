@@ -1,7 +1,9 @@
 // objects merge
 // import __ from "lodash/fp/__"; // pick();
 // @ts-ignore
-import _ from "lodash";
+// import _ from "lodash";
+// const testPick = _.pick(company, keys);
+// console.log(testPick);
 const company = {
     name: null,
     state: 'moderating',
@@ -10,23 +12,36 @@ const data = {
     name: 'Hexlet',
     state: 'published',
 };
-const keys = Object.keys(data);
-console.log(keys);
-const testPick = _.pick(company, keys);
-console.log(testPick);
-// const fill = (objectInn, keys, objectData) =>{
-// const res = _.pick(objectInn, keys);
-// return res;
-// // console.log(res);
-// }
+const fill = (objectInn, keys, objectData) => {
+    const resultObj = {};
+    const objectInnKeys = Object.keys(objectInn);
+    console.log(objectInnKeys);
+    const objectDataKeys = Object.keys(objectData);
+    console.log(objectDataKeys);
+    for (let dataKey in objectDataKeys) {
+        console.log(objectDataKeys[dataKey]);
+        if (objectInnKeys.includes('objectDataKeys[dataKey]')) {
+            if (keys.includes('objectDataKeys[dataKey]')) {
+                resultObj.dataKey = objectData[dataKey];
+            }
+            else {
+                resultObj.dataKey = objectInn[dataKey];
+            }
+        }
+        else {
+            resultObj.dataKey = objectInn[dataKey];
+        }
+    }
+    console.log(JSON.stringify(resultObj));
+};
 // Вызовы ниже нужно рассматривать как независимые
-// console.log(fill(company, ['name'], data));
+console.log(fill(company, ['name'], data));
 // fill(company, ['name'], data);
 // {
 //   name: 'Hexlet',
 //   state: 'moderating',
 // }
-// console.log(fill(company, [], data));
+console.log(fill(company, [], data));
 // fill(company, [], data);
 // {
 //   name: 'Hexlet',
