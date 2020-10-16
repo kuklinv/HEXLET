@@ -21,20 +21,23 @@ const fill = (objectInn, keys, objectData) =>{
     const resultObj = {};
 
     const objectInnKeys = Object.keys(objectInn);
-    console.log(objectInnKeys);
+    // console.log(objectInnKeys);
     const objectDataKeys = Object.keys(objectData);
-    console.log(objectDataKeys);
+    // console.log(objectDataKeys);
 
-    for(let dataKey in objectDataKeys){
-        console.log(objectDataKeys[dataKey]);
-        if(objectInnKeys.includes('objectDataKeys[dataKey]')){
-            if(keys.includes('objectDataKeys[dataKey]')){
-                resultObj.dataKey = objectData[dataKey];
+    for(const dataKey in objectDataKeys){
+        let currentKey = objectDataKeys[dataKey];
+        // console.log(currentKey);
+        if(objectInnKeys.includes(currentKey)){
+            // console.log('есть такой');
+            if(keys.includes(currentKey) || objectInn[currentKey] == null){
+                // console.log('нужно менять');
+                resultObj[currentKey] = objectData[currentKey];
             } else {
-                resultObj.dataKey = objectInn[dataKey];
+                resultObj[currentKey] = objectInn[currentKey];
             }
         } else{
-            resultObj.dataKey = objectInn[dataKey];
+            resultObj[currentKey] = objectInn[currentKey];
         }
     }
     console.log(JSON.stringify(resultObj))
