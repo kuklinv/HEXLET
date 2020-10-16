@@ -21,17 +21,18 @@ const fill = (objectInn, keys, objectData) =>{
     const resultObj = {};
 
     const objectInnKeys = Object.keys(objectInn);
-    // console.log(objectInnKeys);
     const objectDataKeys = Object.keys(objectData);
-    // console.log(objectDataKeys);
 
     for(const dataKey in objectDataKeys){
         let currentKey = objectDataKeys[dataKey];
-        // console.log(currentKey);
+
+        if (keys.length == 0){
+            Object.assign(resultObj, objectData);
+            return resultObj;
+        }
+
         if(objectInnKeys.includes(currentKey)){
-            // console.log('есть такой');
             if(keys.includes(currentKey) || objectInn[currentKey] == null){
-                // console.log('нужно менять');
                 resultObj[currentKey] = objectData[currentKey];
             } else {
                 resultObj[currentKey] = objectInn[currentKey];
@@ -40,7 +41,7 @@ const fill = (objectInn, keys, objectData) =>{
             resultObj[currentKey] = objectInn[currentKey];
         }
     }
-    console.log(JSON.stringify(resultObj))
+    return(resultObj);
 }
 
 // Вызовы ниже нужно рассматривать как независимые
@@ -50,7 +51,7 @@ console.log(fill(company, ['name'], data));
 //   name: 'Hexlet',
 //   state: 'moderating',
 // }
-console.log(fill(company, [], data));
+// console.log(fill(company, [], data));
 // fill(company, [], data);
 // {
 //   name: 'Hexlet',
