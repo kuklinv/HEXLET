@@ -1,11 +1,10 @@
 const sequenceSum = (begin, end) => {
-if (begin > end) {
+  if (begin > end) {
     return NaN;
-   }
-if (begin === end) {
+  }
+  if (begin === end) {
     return end;
-   }
-else {
+  } else {
     return begin + sequenceSum(begin + 1, end);
-   }
+  }
 };

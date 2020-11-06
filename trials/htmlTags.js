@@ -5,13 +5,14 @@ const append = (dom, tag) => consList(tag, dom);
 
 const toString = (dom) => {
   const iter = (dom, acc) => {
-    if(isEmpty(dom)) {
-  	  return acc;
+    if (isEmpty(dom)) {
+      return acc;
     }
-    return `${toString(tail(dom))}<${name(head(dom))}>${value(head(dom))}</${name(head(dom))}>${acc}` 
-  }
+    return `${toString(tail(dom))}<${name(head(dom))}>${value(
+      head(dom)
+    )}</${name(head(dom))}>${acc}`;
+  };
   return iter(dom, ``);
 };
-
 
 export { node, name, value, append, toString };

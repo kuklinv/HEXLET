@@ -28,10 +28,10 @@ const search = (document, tag) => {
 
 const search = (document, tag) => {
   const elements = [...document.body.children]; // or var elements = Array.from(nodelist);
-  if (tag === 'html') {
+  if (tag === "html") {
     return [document.documentElement];
   }
-  if (tag === 'title') {
+  if (tag === "title") {
     return [document.head.firstElementChild];
   }
   // ниже получение html кода элементов с содержимым в массив
@@ -46,9 +46,9 @@ const search = (document, tag) => {
 
 export default search;
 
-search(document, 'html');
-search(document, 'td'); //(2);
-search(document, 'ul'); //(2);
-search(document, 'li'); //(4);
-search(document, 'div'); //2);
-search(document, 'title'); // ([document.head.firstElementChild]);
+search(document, "html");
+search(document, "td"); //(2);
+search(document, "ul"); //(2);
+search(document, "li"); //(4);
+search(document, "div"); //2);
+search(document, "title"); // ([document.head.firstElementChild]);

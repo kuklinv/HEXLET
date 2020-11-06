@@ -3,11 +3,10 @@ const apply = (num, func, arg) => {
   if (num === 0) {
     return arg;
   } else {
-   	let answer = func(arg);
-   	return apply (num - 1, func, answer);
-   	   }
+    let answer = func(arg);
+    return apply(num - 1, func, answer);
+  }
 };
-
 
 /*
 apply(0, Math.sqrt, 4); // => 4

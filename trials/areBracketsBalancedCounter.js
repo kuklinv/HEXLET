@@ -1,12 +1,12 @@
 // реализация проверки баланса круглых скобок через счетчик
-const length = str => str.length;
+const length = (str) => str.length;
 const substr = (str, start, size) => str.substr(start, size);
 const areBracketsBalanced = (input) => {
   let counter = 0;
   const strt = 0;
   const fin = length(input);
-  if (input === '') {
-  	return true;
+  if (input === "") {
+    return true;
   }
   if (fin % 2 !== 0) {
     return false;
@@ -15,9 +15,9 @@ const areBracketsBalanced = (input) => {
     return true;
   }
   for (let i = 0; i <= fin; i += 1) {
-    if (input[i] === '(') {
+    if (input[i] === "(") {
       counter += 1;
-    } else if (input[i] === ')') {
+    } else if (input[i] === ")") {
       counter -= 1;
     }
   }

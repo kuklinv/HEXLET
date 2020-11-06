@@ -14,25 +14,24 @@ const numbers2 = l(3, 2, 9);
 concat(numbers, numbers2); // (3, 4, 5, 8, 3, 2, 9)
 */
 
-
 const has = (numbers, num) => {
   if (isEmpty(numbers) === true) return false; // если список пуст
-  while (numbers !== null) {                   // цикл перебираем список пока не найдем ноль в последней паре (элементе)
-    if (head(numbers) === num) return true;    // проверка головы очередного элемента
-	numbers = tail(numbers);                   // перемещение по связи в следующий элемент
+  while (numbers !== null) {
+    // цикл перебираем список пока не найдем ноль в последней паре (элементе)
+    if (head(numbers) === num) return true; // проверка головы очередного элемента
+    numbers = tail(numbers); // перемещение по связи в следующий элемент
   }
   return false;
 };
 
 const reverse = (list) => {
-  
   const iter = (items, acc) => {
     if (isEmpty(items) === true) {
       return acc;
     }
-    return iter(tail(items), cons(head(items), acc)); 
-  }
-  return iter (list, l());
+    return iter(tail(items), cons(head(items), acc));
+  };
+  return iter(list, l());
 };
 
 /* 
@@ -52,9 +51,8 @@ const reverse = (list) => {
 const concat = (list1, list2) => {
   if (isEmpty(list1)) {
     return list2;
-  }  
+  }
   return cons(head(list1), concat(tail(list1), list2));
 };
 
 export { has, reverse, concat };
-

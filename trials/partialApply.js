@@ -11,5 +11,5 @@ const f2 = partialApply((a, b) => a * b, 5);
 f2(2); // => 10
 f2(5); // => 25
 */
-const partialApply = (fn, b) => a => fn(a, b);
+const partialApply = (fn, b) => (a) => fn(a, b);
 export default partialApply;

@@ -4,13 +4,9 @@
 
 // BEGIN (write your solution here)
 
-export const map = () => {
+export const map = () => {};
 
-};
-
-export const mirrir = () => {
-
-};
+export const mirrir = () => {};
 
 // END
 
@@ -21,8 +17,8 @@ export const b2p = (elements) => {
 
   let newElement;
   const element = head(elements);
-  if (is('blockquote', element)) {
-    newElement = node('p', value(element));
+  if (is("blockquote", element)) {
+    newElement = node("p", value(element));
   } else {
     newElement = element;
   }
@@ -30,4 +26,4 @@ export const b2p = (elements) => {
   return cons(newElement, b2p(tail(elements)));
 };
 
-export { map, mirror }
+export { map, mirror };

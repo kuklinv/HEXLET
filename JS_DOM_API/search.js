@@ -1,9 +1,9 @@
 let html = document.documentElement;
 const search = (doc, tag) => {
-    debugger;
-    const coll = [...doc.children];
-    const initAcc = coll.filter(e => e.tagName.toLowerCase() === tag);
-    return coll.reduce((acc, child) => [...acc, ...search(child, tag)], initAcc);
+  debugger;
+  const coll = [...doc.children];
+  const initAcc = coll.filter((e) => e.tagName.toLowerCase() === tag);
+  return coll.reduce((acc, child) => [...acc, ...search(child, tag)], initAcc);
 };
 // function search(doc, tagName){
 //     debugger;
@@ -25,7 +25,7 @@ const search = (doc, tag) => {
 // for (let i = 0; i < target.length; i += 1) {
 //     console.log(target[i]);
 // }
- /// или
+/// или
 
 // let html = document.documentElement.outerHTML;
 // search(html, 'p');
@@ -45,7 +45,6 @@ const search = (doc, tag) => {
 // }
 // // export default search;
 
-
 // function search(document, tagName) {
 //     let result = [];
 //     let targetEl = document.querySelectorAll('tagName');
@@ -59,14 +58,6 @@ const search = (doc, tag) => {
 //     return result;
 // }
 // export default search;
-
-
-
-
-
-
-
-
 
 // const elements = search(document, 'p');
 // console.log(elements); // 2
@@ -105,7 +96,6 @@ const search = (doc, tag) => {
 // }
 
 // return result;
-
 
 // export default search;
 

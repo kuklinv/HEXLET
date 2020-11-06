@@ -1,37 +1,50 @@
-
 // step 6 from 31
 // exercise MAP
 
-const stopWords = ['and', 'or', 'a', 'the', ''];
-const words = ['HellO', 'h', 'And', 'heLlo', '', 'AND', 'DOG', 'oR', 'cat', 'HELLO', 'caT'];
+const stopWords = ["and", "or", "a", "the", ""];
+const words = [
+  "HellO",
+  "h",
+  "And",
+  "heLlo",
+  "",
+  "AND",
+  "DOG",
+  "oR",
+  "cat",
+  "HELLO",
+  "caT",
+];
 wordsCount(words, stopWords); // [['hello', 3], ['h', 1], ['dog', 1], ['cat', 2]]
 
 function wordsCount(arr1, arr2) {
-    let mapped = new Map();
-    let tempArr = [...arr1];
-    let cleanArr = [];
-    for (let i = 0; i < arr2.length; i += 1) {                             // TODO переписать через reduce
-         cleanArr = tempArr.filter(function (item) {
-            return item.toLowerCase() !== arr2[i];
-        });
-        tempArr = [...cleanArr];
+  let mapped = new Map();
+  let tempArr = [...arr1];
+  let cleanArr = [];
+  for (let i = 0; i < arr2.length; i += 1) {
+    // TODO переписать через reduce
+    cleanArr = tempArr.filter(function (item) {
+      return item.toLowerCase() !== arr2[i];
+    });
+    tempArr = [...cleanArr];
+  }
+  console.log(cleanArr);
+  let temp = [...cleanArr];
+  console.log(temp);
+  for (let i = 0; i < cleanArr.length; i += 1) {
+    let counter = 0;
+    for (let j = 0; j < temp.length; j += 1) {
+      // TODO потерялся tempArr
+      if (cleanArr[i].toLowerCase() == temp[j].toLowerCase()) {
+        counter++;
+        // delete temp[j];
+        temp.splice(j, 1);
+      }
     }
-    console.log(cleanArr);
-    let temp = [...cleanArr];
-    console.log(temp);
-    for (let i = 0; i < cleanArr.length; i += 1) {
-        let counter = 0;
-        for (let j = 0; j < temp.length; j += 1) {                           // TODO потерялся tempArr
-            if (cleanArr[i].toLowerCase() == temp[j].toLowerCase()) {
-                counter ++;
-                // delete temp[j];
-                temp.splice(j,1);
-            }
-        }
-        mapped.set(cleanArr[i], counter);
-    }
-    console.log(mapped);
-    // return mapped;
+    mapped.set(cleanArr[i], counter);
+  }
+  console.log(mapped);
+  // return mapped;
 }
 
 // function makeCounter () {
@@ -56,7 +69,6 @@ function wordsCount(arr1, arr2) {
 //     console.log(cleanArr);
 //     // return mapped;
 // }
-
 
 // export default wordsCount;
 

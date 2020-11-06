@@ -8,44 +8,44 @@
 // console.log(testPick);
 
 const company = {
-    name: null,
-    state: 'moderating',
+  name: null,
+  state: "moderating",
 };
 
 const data = {
-    name: 'Hexlet',
-    state: 'published',
+  name: "Hexlet",
+  state: "published",
 };
 
-const fill = (objectInn, keys, objectData) =>{
-    const resultObj = {};
+const fill = (objectInn, keys, objectData) => {
+  const resultObj = {};
 
-    const objectInnKeys = Object.keys(objectInn);
-    const objectDataKeys = Object.keys(objectData);
+  const objectInnKeys = Object.keys(objectInn);
+  const objectDataKeys = Object.keys(objectData);
 
-    for(const dataKey in objectDataKeys){
-        let currentKey = objectDataKeys[dataKey];
+  for (const dataKey in objectDataKeys) {
+    let currentKey = objectDataKeys[dataKey];
 
-        if (keys.length == 0){
-            Object.assign(resultObj, objectData);
-            return resultObj;
-        }
-
-        if(objectInnKeys.includes(currentKey)){
-            if(keys.includes(currentKey) || objectInn[currentKey] == null){
-                resultObj[currentKey] = objectData[currentKey];
-            } else {
-                resultObj[currentKey] = objectInn[currentKey];
-            }
-        } else{
-            resultObj[currentKey] = objectInn[currentKey];
-        }
+    if (keys.length == 0) {
+      Object.assign(resultObj, objectData);
+      return resultObj;
     }
-    return(resultObj);
-}
+
+    if (objectInnKeys.includes(currentKey)) {
+      if (keys.includes(currentKey) || objectInn[currentKey] == null) {
+        resultObj[currentKey] = objectData[currentKey];
+      } else {
+        resultObj[currentKey] = objectInn[currentKey];
+      }
+    } else {
+      resultObj[currentKey] = objectInn[currentKey];
+    }
+  }
+  return resultObj;
+};
 
 // Вызовы ниже нужно рассматривать как независимые
-console.log(fill(company, ['name'], data));
+console.log(fill(company, ["name"], data));
 // fill(company, ['name'], data);
 // {
 //   name: 'Hexlet',
@@ -96,13 +96,13 @@ console.log(fill(company, ['name'], data));
 // console.log(get(data, ['hosts', 1, null]));
 // console.log(get(data, ['hosts', 1, 'active']));
 
- // null
+// null
 // 'ubuntu'
 // null
- // 'web2'
- // { name: 'web1' }
- // 3
- // false
+// 'web2'
+// { name: 'web1' }
+// 3
+// false
 
 // object properties // has words checker
 
@@ -182,7 +182,6 @@ console.log(fill(company, ['name'], data));
 // console.log(is(company3, company4)); //true
 // console.log(is(company5, company6)); //false
 
-
 // modification
 
 // const lesson = {
@@ -261,7 +260,6 @@ console.log(fill(company, ['name'], data));
 // export default getIn;
 // END
 
-
 // try last version
 
 // let data = {
@@ -331,7 +329,6 @@ console.log(fill(company, ['name'], data));
 //     findKaysArray[0] == "undefined"
 //   ) return null;
 
-
 //     function recTestKeys(obj, key, i) {
 //         if (obj.hasOwnProperty(key[i]) && typeof(key[i]) == 'object') {
 //             return recTestKeys(obj[key[i]], key[i], i+1);
@@ -391,7 +388,6 @@ console.log(fill(company, ['name'], data));
 //     }
 //   }
 
-
 // var findKaysArrayToString = findKaysArray.toString().split(","); // any input types => string
 // console.log(findKaysArray);
 // var kaysArrLen = findKaysArrayToString.length;
@@ -405,7 +401,6 @@ console.log(fill(company, ['name'], data));
 //     return recTestKeys(obj[keys[i]], keys[i + 1]);
 //   } else return null;
 //   }
-
 
 // const users = [
 //   { name: 'Bronn', gender: 'male', birthday: '1973-03-23' },
@@ -424,7 +419,6 @@ console.log(fill(company, ['name'], data));
 
 // // export default getSortedNames;
 
-
 // getSortedNames(users); // ['Bronn', 'Eiegon', 'Reigar', 'Sansa']
 
 // // const data = {
@@ -438,7 +432,6 @@ console.log(fill(company, ['name'], data));
 //       os: 'linux',
 //       virtual: false,
 //     };
-
 
 // const pick = (data, [...searchKeys]) => {
 // 	let result = {};
@@ -460,7 +453,6 @@ console.log(fill(company, ['name'], data));
 // // pick(data, ['none']);       // {}
 
 // pick(data, ['virtual']) // { virtual: false }
-
 
 // var data = {
 //     user: "ubuntu",
@@ -563,7 +555,6 @@ console.log(fill(company, ['name'], data));
 // console.log(getIn(data, ["hosts", 1, null])); // 3
 // console.log(getIn(data, ["hosts", 1, "active"])); // false
 
-
 // const data = {
 //     user: 'ubuntu',
 //     hosts: {
@@ -601,7 +592,6 @@ console.log(fill(company, ['name'], data));
 //         } //else return objectInn[objectInnKeys[j]];
 //     }
 
-
 //     function recTestKeys(key) {
 //         for (let i = 0; i < findKaysArray.length; i++) {
 //             // console.log(objectInn[key])
@@ -637,7 +627,6 @@ console.log(fill(company, ['name'], data));
 // // // //     }
 // // // // }
 // // // }
-
 
 // const data = {
 //     "common": {

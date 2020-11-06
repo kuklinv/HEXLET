@@ -8,6 +8,4 @@
 // chunk(['a', 'b', 'c', 'd'], 3);
 // // [['a', 'b', 'c'], ['d']]
 
-const chunk = () => {
-
-}
+const chunk = () => {};

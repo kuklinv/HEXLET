@@ -12,6 +12,6 @@ const ConditionFunction = If(False);
 ConditionFunction('one')('two'); // two
 */
 
-export const If = f => one => two => f(one)(two); 
-export const True = one => two => one;
-export const False = one => two => two;
+export const If = (f) => (one) => (two) => f(one)(two);
+export const True = (one) => (two) => one;
+export const False = (one) => (two) => two;

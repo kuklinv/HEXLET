@@ -1,11 +1,11 @@
-const identity = str => str;
-const length = str => str.length;
+const identity = (str) => str;
+const length = (str) => str.length;
 
 const reverseInt = (num1) => {
   const num = Math.abs(num1);
   const minus = -1;
   const strFromNum = String(num);
-  let numNewStr = '';
+  let numNewStr = "";
   for (let i = length(strFromNum); i > 0; i -= 1) {
     numNewStr += strFromNum[i - 1];
   }

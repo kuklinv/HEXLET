@@ -17,5 +17,5 @@ wop(1, 2); // 2
 Math.pow(3, 2); // 9
 wop(3, 2); // 8
 */
-const flip = f => (a, b) => f(b, a);
+const flip = (f) => (a, b) => f(b, a);
 export default flip;

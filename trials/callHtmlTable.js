@@ -1,13 +1,14 @@
 // вызов таблицы. преобразование в html
-const table = (...children) => `<table>${children.join('')}</table>`;
-const tr = (...children) => `<tr>${children.join('')}</tr>`;
-const td = (...children) => `<td>${children.join('')}</td>`;
-const p = (...children) => `<p>${children.join('')}</p>`;
+const table = (...children) => `<table>${children.join("")}</table>`;
+const tr = (...children) => `<tr>${children.join("")}</tr>`;
+const td = (...children) => `<td>${children.join("")}</td>`;
+const p = (...children) => `<p>${children.join("")}</p>`;
 
 const vivod = table(
-	tr(td('lang'), td('comment')),
-    tr(td('php'), td('statements')),
-    tr(td('clojure'), td('expressions')));
+  tr(td("lang"), td("comment")),
+  tr(td("php"), td("statements")),
+  tr(td("clojure"), td("expressions"))
+);
 
 export default () => vivod;
 /*
@@ -43,4 +44,3 @@ table(
   </tr>
 </table>
 */
-

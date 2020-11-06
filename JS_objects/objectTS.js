@@ -5,39 +5,37 @@
 // const testPick = _.pick(company, keys);
 // console.log(testPick);
 const company = {
-    name: null,
-    state: 'moderating',
+  name: null,
+  state: "moderating",
 };
 const data = {
-    name: 'Hexlet',
-    state: 'published',
+  name: "Hexlet",
+  state: "published",
 };
 const fill = (objectInn, keys, objectData) => {
-    const resultObj = {};
-    const objectInnKeys = Object.keys(objectInn);
-    const objectDataKeys = Object.keys(objectData);
-    for (const dataKey in objectDataKeys) {
-        let currentKey = objectDataKeys[dataKey];
-        if (keys.length == 0) {
-            Object.assign(resultObj, objectData);
-            return resultObj;
-        }
-        if (objectInnKeys.includes(currentKey)) {
-            if (keys.includes(currentKey) || objectInn[currentKey] == null) {
-                resultObj[currentKey] = objectData[currentKey];
-            }
-            else {
-                resultObj[currentKey] = objectInn[currentKey];
-            }
-        }
-        else {
-            resultObj[currentKey] = objectInn[currentKey];
-        }
+  const resultObj = {};
+  const objectInnKeys = Object.keys(objectInn);
+  const objectDataKeys = Object.keys(objectData);
+  for (const dataKey in objectDataKeys) {
+    let currentKey = objectDataKeys[dataKey];
+    if (keys.length == 0) {
+      Object.assign(resultObj, objectData);
+      return resultObj;
     }
-    return (resultObj);
+    if (objectInnKeys.includes(currentKey)) {
+      if (keys.includes(currentKey) || objectInn[currentKey] == null) {
+        resultObj[currentKey] = objectData[currentKey];
+      } else {
+        resultObj[currentKey] = objectInn[currentKey];
+      }
+    } else {
+      resultObj[currentKey] = objectInn[currentKey];
+    }
+  }
+  return resultObj;
 };
 // Вызовы ниже нужно рассматривать как независимые
-console.log(fill(company, ['name'], data));
+console.log(fill(company, ["name"], data));
 // fill(company, ['name'], data);
 // {
 //   name: 'Hexlet',

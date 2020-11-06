@@ -1,5 +1,5 @@
 // проверка сбалансированности круглых скобок
-const length = str => str.length;
+const length = (str) => str.length;
 const substr = (str, start, size) => str.substr(start, size);
 
 const areBracketsBalanced = (input) => {

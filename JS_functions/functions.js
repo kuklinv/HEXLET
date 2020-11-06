@@ -1,51 +1,45 @@
 // const _ = require('lodash');
-import { _ } from '../node_modules/lodash'
+import { _ } from "../node_modules/lodash";
 
-const freeEmailDomains = [
-    'gmail.com',
-    'yandex.ru',
-    'hotmail.com',
-];
+const freeEmailDomains = ["gmail.com", "yandex.ru", "hotmail.com"];
 
 const emails = [
-    'info@gmail.com',
-    'info@yandex.ru',
-    'info@hotmail.com',
-    'mk@host.com',
-    'support@hexlet.io',
-    'key@yandex.ru',
-    'sergey@gmail.com',
-    'vovan@gmail.com',
-    'vovan@hotmail.com',
+  "info@gmail.com",
+  "info@yandex.ru",
+  "info@hotmail.com",
+  "mk@host.com",
+  "support@hexlet.io",
+  "key@yandex.ru",
+  "sergey@gmail.com",
+  "vovan@gmail.com",
+  "vovan@hotmail.com",
 ];
 
-
 const getFreeDomainsCount = (data) => {
-    let clearDomainsArr = data.map((el)=>{
-        return el.slice(el.indexOf('@')+1);
-    });
+  let clearDomainsArr = data.map((el) => {
+    return el.slice(el.indexOf("@") + 1);
+  });
 
-    console.log(clearDomainsArr);
+  console.log(clearDomainsArr);
 
-    let filteredDomainFree = clearDomainsArr.filter((item)=> {
-        let res = [];
-        if(freeEmailDomains.includes(item)){
-            res.push(item);
-        }
-        return res;
-    });
-    console.log(filteredDomainFree);
+  let filteredDomainFree = clearDomainsArr.filter((item) => {
+    let res = [];
+    if (freeEmailDomains.includes(item)) {
+      res.push(item);
+    }
+    return res;
+  });
+  console.log(filteredDomainFree);
 
-    return filteredDomainFree.reduce((acc, domain)=>{
-        if(!_.has(acc, domain)){
-            acc[domain]  = 1;
-        } else {
-            acc[domain] = acc[domain] + 1;
-        }
-        return acc;
-    }, {})
-}
-
+  return filteredDomainFree.reduce((acc, domain) => {
+    if (!_.has(acc, domain)) {
+      acc[domain] = 1;
+    } else {
+      acc[domain] = acc[domain] + 1;
+    }
+    return acc;
+  }, {});
+};
 
 getFreeDomainsCount(emails);
 // {
@@ -113,7 +107,6 @@ getMenCountByYear(users);
 // }
 
 // console.log(takeLast('hexlet', 4)); // telx
-
 
 // const uniq = require('lodash');
 // import { uniq } from 'lodash';

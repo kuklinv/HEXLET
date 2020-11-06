@@ -16,18 +16,18 @@ console.log(uniq([-2, 20, 0, 4, 20, 0]));
 // }
 
 function uniq(arr) {
-    let result = [];
-    for (let i = 0; i < arr.length; i += 1) {
-        let temp = [...arr];
-        let  tempArr = temp.splice(i);
-        let chekker = temp.indexOf(arr[i]);
-        if (chekker == -1) {
-            result.push(arr[i]);
-        }
-        temp = [];
-        tempArr = [];
+  let result = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    let temp = [...arr];
+    let tempArr = temp.splice(i);
+    let chekker = temp.indexOf(arr[i]);
+    if (chekker == -1) {
+      result.push(arr[i]);
     }
-    return result;
+    temp = [];
+    tempArr = [];
+  }
+  return result;
 }
 
 // function uniq(arr) {
@@ -40,7 +40,6 @@ function uniq(arr) {
 
 // console.log(uniq([2, 1, 2, 3]));
 //
-
 
 // function uniq(arr) {
 //     let newArr = [];
