@@ -1,3 +1,5 @@
+// 08.11.20 today im rebase and restore its branch and its work with jest
+
 import getFunction from "../src/functions.js";
 import { beforeEach, test } from "@jest/globals";
 import _ from "lodash";
