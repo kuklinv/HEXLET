@@ -16,6 +16,8 @@
 
 ### ! remove all dependencies, configs in root folder for start new projects in separate folders
 
+* add new folder 'frontend architecture' for
+  relevant lessons
 ### 17.11.20
 
 * refactoring doubling all files
