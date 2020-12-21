@@ -12,12 +12,13 @@
 
 [![Run on Repl.it](https://repl.it/badge/github/kuklinv/HEXLET)](https://repl.it/github/kuklinv/HEXLET)
 
-## 22.12.20
+### 22.12.20
 
-### ! remove all dependencies, configs in root folder for start new projects in separate folders
+#### ! remove all dependencies, configs in root folder for start new projects in separate folders
 
-* add new folder 'frontend architecture' for
-  relevant lessons
+* add new folder 'frontend architecture' for relevant lessons
+* create hexlet-react-course
+
 ### 17.11.20
 
 * refactoring doubling all files
