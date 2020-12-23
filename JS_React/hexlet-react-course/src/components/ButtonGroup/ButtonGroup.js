@@ -5,15 +5,25 @@ class ButtonGroup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: true
+            btnLeftActive: "btn btn-secondary left active",
+            btnLeftUnActive : "btn btn-secondary left",
+            btnRightActive: "btn btn-secondary right active",
+            btnRightUnActive: "btn btn-secondary right"
         }
     }
 
+    btnLeftHandler = () => {
+
+    }
+    btnRightHandler = () => {
+
+
+    }
     render() {
         return (
             <div className="btn-group" role="group">
-                <button type="button" className="btn btn-secondary left">Left</button>
-                <button type="button" className="btn btn-secondary right">Right</button>
+                <button onClick={this.btnLeftHandler} type="button" className={this.state.btnLeftUnActive}>Left</button>
+                <button onClick={this.btnRightHandler} type="button" className={this.state.btnRightUnActive}>Right</button>
             </div>
         )
     }
