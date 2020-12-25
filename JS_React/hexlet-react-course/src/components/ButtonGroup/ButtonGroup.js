@@ -12,19 +12,23 @@ class ButtonGroup extends Component {
         }
     }
 
-    btnLeftHandler = () => {
-        const pressedLeft = this.state.isPressedLeft;
-        // const pressedRight = this.state.isPressedRight;
-        pressedLeft ? this.setState({isPressedLeft: true, isPressedRight: false, btnSide: 'left'}) : this.setState({
-            isPressedLeft: false,
-            isPressedRight: true,
-            btnSide: 'right'
-        });
+    btnLeftHandler = (e) => () => {
+        const target = e.target;
+        const btnSide = target.innerText;
+        if (btnSide === 'Left') {
+            this.setState({isPressedLeft: true, isPressedRight: false, btnSide: btnSide});
+        } else if (btnSide === 'Right') {
+            this.setState({isPressedLeft: false, isPressedRight: true, btnSide: btnSide});
+        }
     }
-    // btnRightHandler = () => {
-    //
-    //
-    // }
+    //     const pressedLeft = this.state.isPressedLeft;
+    //     // const pressedRight = this.state.isPressedRight;
+    //     pressedLeft ? this.setState({isPressedLeft: true, isPressedRight: false, btnSide: 'left'}) : this.setState({
+    //         isPressedLeft: false,
+    //         isPressedRight: true,
+    //         btnSide: 'right'
+    //     });
+
 
     render() {
         const {isPressedLeft, isPressedRight, btnSide} = this.state;
@@ -34,9 +38,9 @@ class ButtonGroup extends Component {
             'right': isPressedRight
         });
         return (
-            <div className="btn-group" role="group">
-                <button onClick={this.btnLeftHandler} type="button" className={btnClass}>Left</button>
-                <button onClick={this.btnRightHandler} type="button" className={btnClass}>Right</button>
+            <div onClick={this.btnLeftHandler} className="btn-group" role="group">
+                <button type="button" className={btnClass}>Left</button>
+                <button type="button" className={btnClass}>Right</button>
             </div>
         )
     }
