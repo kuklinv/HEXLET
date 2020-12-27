@@ -6,8 +6,7 @@ class ButtonGroup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isPressedLeft: false,
-            isPressedRight: false,
+            active: false,
             btnSide: null
         }
     }
@@ -19,6 +18,8 @@ class ButtonGroup extends Component {
             this.setState({isPressedLeft: true, isPressedRight: false, btnSide: btnSide});
         } else if (btnSide === 'Right') {
             this.setState({isPressedLeft: false, isPressedRight: true, btnSide: btnSide});
+        } else {
+            return;
         }
     }
     //     const pressedLeft = this.state.isPressedLeft;
@@ -31,11 +32,10 @@ class ButtonGroup extends Component {
 
 
     render() {
-        const {isPressedLeft, isPressedRight, btnSide} = this.state;
+        const {btnSide, active} = this.state;
         const btnClass = cn('btn', 'btn-secondary', {
-            'active': isPressedLeft,
-            'left': isPressedLeft,
-            'right': isPressedRight
+            [`${btnSide}`]: true,
+            'active': active
         });
         return (
             <div onClick={this.btnLeftHandler} className="btn-group" role="group">
