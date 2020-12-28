@@ -14,7 +14,7 @@ class BtnGroup extends Component {
 
     btnLeftHandler = (e) => {
         const target = e.target;
-        const btnSide = target.innerText;
+        const btnSide = target.textContent;
         if (btnSide === 'Left') {
             this.setState({activeLeft: true, activeRight: false});
         } else if (btnSide === 'Right') {

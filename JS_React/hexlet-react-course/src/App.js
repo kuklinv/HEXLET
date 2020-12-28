@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import ButtonGroup from "./components/ButtonGroup/ButtonGroup.js";
+import BtnGroup from "./components/ButtonGroup/ButtonGroup.js";
 
 function App() {
     return (
@@ -8,7 +8,7 @@ function App() {
             <header className="App-header">
                 Its React course on HEXLET
                 <div>
-                    <ButtonGroup/>
+                    <BtnGroup/>
                 </div>
             </header>
         </div>
